@@ -1,17 +1,17 @@
 # Fdb version 3
-["bibtex Gougu"] 1628607674 "Gougu.aux" "Gougu.bbl" "Gougu" 1628607679
-  "Gougu.aux" 1628607677 529 b2641c1a9ea9f41c3121aa4b6761ef89 "pdflatex"
+["bibtex Gougu"] 1628856044 "Gougu.aux" "Gougu.bbl" "Gougu" 1628856050
+  "Gougu.aux" 1628856047 529 b2641c1a9ea9f41c3121aa4b6761ef89 "pdflatex"
   "c:/texlive/2021/texmf-dist/bibtex/bst/base/plain.bst" 1627907813 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "math.bib" 1628607570 706 7292b769dfd219603e2f423bc92bd99e ""
+  "math.bib" 1628608366 706 7292b769dfd219603e2f423bc92bd99e ""
   (generated)
   "Gougu.blg"
   "Gougu.bbl"
-["pdflatex"] 1628607675 "c:/Users/X/Documents/Code/LaTeX/Example/Gougu.tex" "Gougu.pdf" "Gougu" 1628607679
-  "Gougu.aux" 1628607677 529 b2641c1a9ea9f41c3121aa4b6761ef89 "pdflatex"
-  "Gougu.bbl" 1628607675 414 fa13567e17478af8033c4fa3021c8702 "bibtex Gougu"
-  "Gougu.tex" 1628607668 2460 05fa88264d3fda300db8baa86447a3a5 ""
-  "Gougu.toc" 1628607677 142 6e94aa10fa64a7b126b321fc7b101ffe "pdflatex"
-  "c:/Users/X/Documents/Code/LaTeX/Example/Gougu.tex" 1628607668 2460 05fa88264d3fda300db8baa86447a3a5 ""
+["pdflatex"] 1628856045 "c:/Users/X/Documents/Code/LaTeX/Example/Gougu.tex" "Gougu.pdf" "Gougu" 1628856050
+  "Gougu.aux" 1628856047 529 b2641c1a9ea9f41c3121aa4b6761ef89 "pdflatex"
+  "Gougu.bbl" 1628856045 414 fa13567e17478af8033c4fa3021c8702 "bibtex Gougu"
+  "Gougu.tex" 1628856037 2460 05fa88264d3fda300db8baa86447a3a5 ""
+  "Gougu.toc" 1628856047 142 6e94aa10fa64a7b126b321fc7b101ffe "pdflatex"
+  "c:/Users/X/Documents/Code/LaTeX/Example/Gougu.tex" 1628856037 2460 05fa88264d3fda300db8baa86447a3a5 ""
   "c:/Windows/Fonts/msyh.ttc" 1575709707 19647736 ff2e53a6131130a07589812ea5b5b0d0 ""
   "c:/Windows/Fonts/simhei.ttf" 1571147160 9753388 6abc0fcfbaa40600f9cecca3afeb3aa7 ""
   "c:/Windows/Fonts/simkai.ttf" 1571147160 11787328 76179557c160634a761c845ea111c893 ""
@@ -201,9 +201,9 @@
   "c:/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1627954074 5227287 e151fc6fd8e09c44e5f41e1c855f0ff4 ""
   "c:/texlive/2021/texmf-var/web2c/pdftex/pdflatex.fmt" 1627954629 2801564 915ffce8c804a75a15bd126dfdafaa43 ""
   "c:/texlive/2021/texmf.cnf" 1627953995 713 e69b156964470283e0530f5060668171 ""
-  "xiantu.jpg" 1628598360 56909 7cff99596684fb2b382f7d5f3b9e9a92 ""
+  "xiantu.jpg" 1628608366 56909 7cff99596684fb2b382f7d5f3b9e9a92 ""
   (generated)
-  "Gougu.toc"
-  "Gougu.pdf"
-  "Gougu.log"
   "Gougu.aux"
+  "Gougu.log"
+  "Gougu.pdf"
+  "Gougu.toc"
