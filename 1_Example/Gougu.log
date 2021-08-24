@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.8.3)  21 AUG 2021 20:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.8.3)  24 AUG 2021 14:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/X/Documents/Code/LaTeX/Example/Gougu.tex
-(c:/Users/X/Documents/Code/LaTeX/Example/Gougu.tex
+**c:/Users/X/Documents/Code/LaTeX/1_Example/Gougu.tex
+(c:/Users/X/Documents/Code/LaTeX/1_Example/Gougu.tex
 LaTeX2e <2021-06-01> patch level 1
 L3 programming layer <2021-07-12> (c:/texlive/2021/texmf-dist/tex/latex/ctex/ctexart.cls (c:/texlive/2021/texmf-dist/tex/latex/ctex/config/ctexbackend.cfg
 File: ctexbackend.cfg 2021/06/20 v2.5.7 Backend configuration file (CTEX)
@@ -335,38 +335,34 @@ LaTeX Font Info:    Trying to load font information for C70+zhkai on input line 
 File: c70zhkai.fd 2009/09/23 4.8.2
 )
 Package CJKpunct Info: use punctuation spaces for family 'zhkai' with punctstyle (quanjiao) on input line 33.
-
-Underfull \hbox (badness 10000) in paragraph at lines 40--42
-
- []
-
-<xiantu.jpg, id=43, 447.6725pt x 635.37375pt>
-File: xiantu.jpg Graphic file (type jpg)
-<use xiantu.jpg>
-Package pdftex.def Info: xiantu.jpg  used on input line 45.
-(pdftex.def)             Requested size: 223.8357pt x 317.6861pt.
-(c:/texlive/2021/texmf-dist/tex/generic/ctex/zhmap/ctex-zhmap-windows.tex
+ (c:/texlive/2021/texmf-dist/tex/generic/ctex/zhmap/ctex-zhmap-windows.tex
 File: ctex-zhmap-windows.tex 2021/06/20 v2.5.7 Windows font map loader for pdfTeX and DVIPDFMx (CTEX)
 {c:/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{UGBK.sfd}{Unicode.sfd}) [1
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 62--65
+<xiantu.jpg, id=119, 447.6725pt x 635.37375pt>
+File: xiantu.jpg Graphic file (type jpg)
+<use xiantu.jpg>
+Package pdftex.def Info: xiantu.jpg  used on input line 46.
+(pdftex.def)             Requested size: 223.8357pt x 317.6861pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 63--65
 
  []
 
 (./Gougu.bbl [2 <./xiantu.jpg>]) [3] (./Gougu.aux) ) 
 Here is how much of TeX's memory you used:
- 6359 strings out of 478542
- 121870 string characters out of 5854403
- 402874 words of memory out of 5000000
- 23915 multiletter control sequences out of 15000+600000
+ 6355 strings out of 478542
+ 121805 string characters out of 5854403
+ 400874 words of memory out of 5000000
+ 23914 multiletter control sequences out of 15000+600000
  452126 words of font info for 201 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 76i,9n,82p,751b,379s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 76i,9n,82p,753b,379s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on Gougu.pdf (3 pages, 513539 bytes).
+Output written on Gougu.pdf (3 pages, 514533 bytes).
 PDF statistics:
- 511 PDF objects out of 1000 (max. 8388607)
+ 512 PDF objects out of 1000 (max. 8388607)
  332 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
  210 words of extra memory for PDF output out of 10000 (max. 10000000)
