@@ -4,7 +4,7 @@
 
 \documentclass{article}
 
-\usepackage[OT2,OT1]{fontenc}
+\usepackage[OT2,T1]{fontenc}
 \usepackage[greek,english]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{textcomp}
@@ -41,7 +41,10 @@
             % Input greek letter and cyrillic by using babel or fontenc macros. 
             % NOTICE: Some letters need support all of the editor, input font and output font. 
             % TODO: More details of using babel are in http://www.leliseron.org/annexes/LaTeX/babel.pdf
-            % FIXME: How to input Russian with babel? 
+            % FIXME: How to input Russian with babel?
+            % REVIEW: 
+            % DEBUG:
+            % NOTE:
 
         \subsection{Ligature}
             differ find flight difficult ruffle\newline
@@ -127,7 +130,7 @@
         % In English writing, the space must be used after ", . ; :". 
             % TODO: See more details of rules in English writing in book--
             % Robert Bringhurst's The Element of Typographic Style, 
-            % and Anonymous' The Manual of Style. 
+            % Anonymous' The Manual of Style. 
         % In LaTeX, the width of the space at the end of a sentence following a dot
             % is different from in the middle. 
         % But sometimes, a dot could be used 
@@ -138,7 +141,7 @@
             % a space while automatially add between Chinese and English
             % ignoring how many space you have typed in these space. 
         % Also there are some methods to prevent the space from generating by the compiler. 
-        % TODO: Please see Chinese documentation for more infomation. 
+        % Please see Chinese documentation for more infomation. 
         There is a phantom in the box. 
         There is a \phantom{phantom} in the box. 
         % The command \phantom will generating a blank box
@@ -147,7 +150,7 @@
     \section{Line Feed}
         This is a line. 
 
-        This is another line.
+        This is another line. \newline
         % In latex, just one line feed would be ignored, 
             % this peculiarity is set to help the code more legible. 
         % To begin a new paragraph, you need two line feed
@@ -165,6 +168,54 @@
         % ranging from 0 the lowest to 4 the highest being contrary to the command \nolinebreak. 
         
     \section{Font}
+        % font family
+        \textrm{Roman font}\newline
+        {\rmfamily Roman font}\newline              % the same as \textrm{}
+        {\sffamily Sanserif font}\newline           % the same as \textsf{}
+        {\ttfamily Typewriter font}\newline         % the same as \texttt{}
+        % font shape
+        {\upshape Upright shape}\newline            % the same as \textup{}
+        {\itshape Italic shape}\newline             % the same as \textit{}
+        {\slshape Slanted shape}\newline            % the same as \textsl{}
+        {\scshape Small capital shape}\newline      % the same as \textsc{}
+        % font series
+        {\mdseries Medium series}\newline           % the same as \textmd{}
+        {\bfseries Bold extended series}\newline    % the same as \textbf{}
+        % The font can be divided into three orthometric dimensions--family, shape and series. 
+        % There are two ways to change the font which are font declaration as the examples above. 
+            % and box command with parameter as the explaination in annotation. 
+        % In latex, available options are given above. 
+            % Since some font may not have so all shape or series, 
+            % these two command may have different effect from usual font. 
+        % Chinese fonts usaully have no other variant, so 
+            % different type of fonts are used to replace the variant in a font family. 
+            % TODO: See more details in Chinese Documentation. 
+        % mixed font
+        {\rmfamily\upshape\mdseries Mixed font I}\newline
+        \textsf\textit\textbf{Mixed font II}\newline
+        % The font's three dimensions can be mixed optionally. 
+        % The last slanted letter at the end of a line will cross the right margin. 
+            % Use the methods underneath to revise it. 
+        {\itshape M}M \quad \textit{M}M \quad {\itshape M\/}M\newline
+        \textit{M\nocorr}M\newline         % Forbid the revise. 
+        % Also, bold letters may be too close to the puntuation following it. 
+            % Underneath are methods to solve it. 
+        `{\bfseries leaf}' \quad `{\bfseries leaf\/}' \quad `\textbf{leaf}'\newline
+        % EXTENSION: Command \newcommand could be used to reset \nocorrlist{}. 
+            % \nocorrlist{} is defualt set with "," and "." in it 
+            % which is the same as \newcommand\nocorrlist{,.}
+        % If you want to change back to default font in a complex font environment, 
+            % do like underneath
+        \sffamily\textbf{There is a \textit{complex example, 
+        but \textnormal{a normal one} is in} it}\newline
+            % {\normalfont ...} is equal to it.  
+            % And the font you will get using this command is \rmfamily\mdseries\upshape. 
+        % EXTENSION: More details about English font can be found in 
+        % Like our dividing font into three dimensions, latex publish its own methods to locate a font, 
+            % NFSS(New Font Selection Scheme) which also dividing font into many orthometric properties, 
+            % such as encoding, family, series, shape, size and so on. 
+        {\fontencoding{OT1}\fontfamily{pzc}\fontseries{m}\fontshape{n}\fontsize{14}{17}
+        \selectfont PostScrip New Century Schoolbook}
         
 
 \end{document}
