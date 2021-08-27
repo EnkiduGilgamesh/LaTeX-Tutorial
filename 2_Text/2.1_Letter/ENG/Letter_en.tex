@@ -1,0 +1,170 @@
+%-*- coding: UTF-8 -*-
+% Letter.tex
+% Letetr and Symbol
+
+\documentclass{article}
+
+\usepackage[OT2,OT1]{fontenc}
+\usepackage[greek,english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+
+\title{Letter and Symbol}
+\author{Wenren Muyan}
+\date{\today}
+
+\begin{document}
+    \maketitle
+
+        \begin{abstract}
+        Input letter and symbol. 
+    \end{abstract}
+
+    \tableofcontents
+
+    \section{Letter}
+        \subsection{Accents}
+            \`o\phantom{50}\'o\phantom{50}\^o\phantom{50}\"o\newline
+            \~o\phantom{50}\=o\phantom{50}\.o\phantom{50}\u{o}\newline
+            \v{o}\phantom{50}\H{o}\phantom{50}\t{oo}\phantom{50}\r{o}\newline
+            \c{o}\phantom{50}\d{o}\phantom{50}\b{o}\newline
+            \AA\phantom{50}\aa\phantom{50}\AE\phantom{50}\ae\newline
+            \OE\phantom{50}\oe\phantom{50}\SS\phantom{50}\ss\newline
+            \IJ\phantom{50}\ij\phantom{50}\L\phantom{50}\l\newline
+            \O\phantom{50}\o\phantom{50}\i\phantom{50}\j
+            % Some example of accents on letters and some LaTeX letters. 
+
+        \subsection{Other Letters}
+            \textgreek{abcde}\newline
+            %\textrussian{abcde}
+            {\fontencoding{OT2}\selectfont ABCDE}
+            % Input greek letter and cyrillic by using babel or fontenc macros. 
+            % NOTICE: Some letters need support all of the editor, input font and output font. 
+            % TODO: More details of using babel are in http://www.leliseron.org/annexes/LaTeX/babel.pdf
+            % FIXME: How to input Russian with babel? 
+
+        \subsection{Ligature}
+            differ find flight difficult ruffle\newline
+            dif{}fer f{}ind f\/light dif\/f\/icult ruffle
+            % To avoid ligature betweent tow letters, 
+            % There are tow ways taht you can do like above. 
+
+    \section{Punctuation}
+        \subsection{Common Punctuation}
+            , \quad . \quad ; \quad :\newline
+            ! \quad ? \quad ` \quad '\newline
+            ( \quad ) \quad [ \quad ]\newline
+            \quad - \quad / \quad * \quad @\newline
+            % DCB case punctuation that can input directly
+            % SBC case punctuation is similar to DCB. 
+            `` \quad '' \quad ``\,` '\,''\newline
+            % Use \, to split " and ' if they are close to each other. 
+            X-ray, 1--2, APP---Application\newline
+            % Different number of '-' will generate different puncatuation. 
+            % NOTICE: The habit of using them in English writing. 
+            Good: One, two, Three\dots\newline
+            Bad: One, two, Three...\newline
+            % The Command \dots will generate an ellipsis 
+                % with wider distance between dots which has a better looking
+                % than directly using three dots punctuation. 
+            % Command \dots is equal to \ldots. 
+            One, two, Three\dots.
+            % Another dots that used to be full stop could follow \dots. 
+        
+        \subsection{Special Punctuation}
+            % Some symbol or punctuation are occupied by LaTeX command
+                % which can not input directly 
+                % and need to input specific command instead. 
+                % We call the "\" escape character. 
+            \# \quad \$ \quad \% \quad \&\newline
+            \{ \quad \} \quad \_ \quad \textbackslash\newline
+            \~{} \quad \^{} \quad 
+            % TODO: Input |, <, >, +, =
+
+        \subsection{Other symbol}
+            \S \quad \dag \quad \ddag \quad \P\newline
+            \copyright \quad \textregistered \quad \texttrademark \quad \pounds \quad \textbullet\newline
+            % Above is the special symbol frequently using in an artical
+                % in latex default environment. 
+                % You can also type the symbol through UTF-8 coding. 
+            % NOTICE: Other symbol have dependence on different font. 
+            % Latex basic macro package textcomp has designed many symbol would appear in a text. 
+            \texteuro \quad \textperthousand\newline
+            % Package tipa provide symbol of phonetic, 
+                % dingbat, bbding, pifont provide other symbol of instruction and decoration. 
+            % TODO: Look up the package above how to use. 
+            % See "./symbols-letters.pdf" for more symbols. 
+            % NOTICE: Some package just provide symbol command, 
+                % some package provide alternative font to their symbol, 
+                % while some package change the holistic font set of the artical. 
+                % So please read related documentation of your package before using. 
+            \symbol{90} \quad \symbol{"5A} \quad \symbol{'132} \quad \symbol{`Z}
+            % Command \symbol allow you type the symbol's coding to repalace it. 
+            % The coding can be decimal, octonary, hexadecimal and the symbol its self. 
+                % The format example is given above. 
+                % NOTICE: If the symbol is special punctuation in 2.2, an escape character is also needed in front. 
+                % NOTICE: Chinese character is only allowed in xelatex environment.
+
+    \section{Blank}
+        A B  C   D    E\newline
+        % NOTICE: A series of space is equal to a click of space. 
+        \TeX ing and \TeX\ ing and \TeX{} ing and {\TeX} ing. \newline
+        % The space after a macro command will be ignored. 
+        % 4 ways to avoid the ignoring situation are avove. 
+        Question~1\newline          % 1. Name and its sort
+        Donald~E Knuth\newline      % 2. Given name
+        Mr.~Knuth\newline           % 3. Acronym of name
+        function~$f(x)$\newline     % 4. Short equation after its name
+        1,~2, and 3\newline         % 5. Sequence
+        % These situation is not allowed to interrupt two words. 
+        % However, blank generating by click the space key could be interrupted
+            % if there is a line feed or something else. 
+        % Using ~ to link two words can prevent them to be interrupted. 
+        A sentence. Another Sentence. \newline              % 1
+        U.S.A. means United States of America. \newline     % 2
+        Roman number XII\@. Yes. \newline                   % 3
+        Thinker et al.\ made the double play.       % 4
+        % In English writing, the space must be used after ", . ; :". 
+            % TODO: See more details of rules in English writing in book--
+            % Robert Bringhurst's The Element of Typographic Style, 
+            % and Anonymous' The Manual of Style. 
+        % In LaTeX, the width of the space at the end of a sentence following a dot
+            % is different from in the middle. 
+        % But sometimes, a dot could be used 
+            % in the middle of a sentence following a samll letter like situation 4. 
+            % or at the end of a sentence following a capital letter like situation 3. 
+        % Use command \@. in the situation 3 and use '\' before a sapce in the situation 4.  
+        % While you compiling Chinese documentation with xelatex, 
+            % a space while automatially add between Chinese and English
+            % ignoring how many space you have typed in these space. 
+        % Also there are some methods to prevent the space from generating by the compiler. 
+        % TODO: Please see Chinese documentation for more infomation. 
+        There is a phantom in the box. 
+        There is a \phantom{phantom} in the box. 
+        % The command \phantom will generating a blank box
+            % as wide as the paremeter. 
+
+    \section{Line Feed}
+        This is a line. 
+
+        This is another line.
+        % In latex, just one line feed would be ignored, 
+            % this peculiarity is set to help the code more legible. 
+        % To begin a new paragraph, you need two line feed
+            % with a blank line in the middle. 
+        This is a line. \newline
+        This is another line. 
+        % Another way to begin a new line is to use command
+            % \\ or \newline at the end of a line. 
+        % Command \linebreak will distribute the former from left to right margin in Chinese environment. 
+        % NOTICE: Both \\ and \linebreak have hbox problem in common environment, 
+            % they are usually used in poetry, table and math. 
+        % Command \\ have a parameter which set the vertical distance between two lines. 
+            % If the line after \\ begin with "[", you need using {} after \\ with blank content. 
+        % And \linebreak have a command which set the degree of line feed and be defaultly set to 4, 
+        % ranging from 0 the lowest to 4 the highest being contrary to the command \nolinebreak. 
+        
+    \section{Font}
+        
+
+\end{document}

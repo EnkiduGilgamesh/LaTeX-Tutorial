@@ -2,7 +2,15 @@
 % Letter.tex
 % 文字与符号
 
+% 因为中文和西文环境不同，很多命令在中文环境下会出现不可预知的错误。
+% 请先参阅 "./ENG/Letter_en.tex"
+
 \documentclass[UTF8]{ctexart}
+
+%\usepackage[OT2,OT1]{fontenc}
+%\usepackage[greek,english]{babel}
+\usepackage[utf8]{inputenc}
+%\usepackage[russian,english]{babel}
 
 \title{文字与符号}
 \author{闻人沐妍}
@@ -13,19 +21,37 @@
 \begin{document}
     \maketitle
 
-    \begin{abstract}
+        \begin{abstract}
         文字与符号的编辑
     \end{abstract}
 
     \tableofcontents
 
-    \section{字母和单词}
-        \subsection{字母重音}
-            \`o\phantom{50}\'o\phantom{50}\^o\phantom{50}\"o
-            
-            \~o\phantom{50}\=o\phantom{50}\.o\phantom{50}\u{o}
+    \section{字母}
+        \subsection{重音}
 
-            \v{o}\phantom{50}\H{o}\phantom{50}\t{oo}\phantom{50}\r{o}
+        \subsection{其他字母}
+        
+        \subsection{连字}
 
-            \c{o}\phantom{50}\d{o}\phantom{50}\b{o}
+    \section{标点符号}
+        \subsection{普通标点}
+
+        \subsection{特殊标点}
+
+        \subsection{特殊符号}
+
+    \section{空格}
+        \mbox{条目}-a 和条目-b。
+        % 为了避免中文和西文之间默认的空格，可以将中文装入一个盒子中。
+        % 也可以使用 \CJKsetecglue{} 空白参数，表示中文与西文之间的内容为空。
+
+    \section{换行}
+        这是第一行\linebreak[4]
+        另一行\linebreak
+        另一行\linebreak[2]
+        另一行\linebreak[0]
+        最后一行
+
 \end{document}
+
