@@ -24,19 +24,26 @@
 ### 2.1 使用计量单位
 
 出现问题
-```
+
+```bash
 Illegal unit of measure
 ```
+
 这是因为图片宽度设置没有单位，无法判断大小。
 将
+
 ```tex
 \includegraphics[width=3]{xiantu.jpg}
 ```
+
 改为
+
 ```tex
 \includegraphics[width=3cm]{xiantu.jpg}
 ```
+
 后面我又将其改为了
+
 ```tex
 \includegraphics[scale=0.5]{xiantu.jpg}
 ```

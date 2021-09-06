@@ -6,11 +6,15 @@
 % 请先参阅 "./ENG/Letter_en.tex"
 
 \documentclass[UTF8]{ctexart}
+\usepackage{CJKfntef}
 
-%\usepackage[OT2,OT1]{fontenc}
-%\usepackage[greek,english]{babel}
-\usepackage[utf8]{inputenc}
-%\usepackage[russian,english]{babel}
+% -------- 使用 xelatex 编译 ---------
+%\setCJKmainfont{Source Han Serif CN}            % 思源宋体
+%\setCJKsansfont{Source Han Sans CN}             % 思源黑体
+%\setCJKmonofont{FZQingKeBenYueSongJF}           % 方正清刻
+
+%\setCJKfamilyfont{pen}{LiDeBiao-Xing3}          % 徳彪钢笔行书
+% -------- 使用 xelatex 编译 ---------
 
 \title{文字与符号}
 \author{闻人沐妍}
@@ -21,7 +25,7 @@
 \begin{document}
     \maketitle
 
-        \begin{abstract}
+    \begin{abstract}
         文字与符号的编辑
     \end{abstract}
 
@@ -52,6 +56,69 @@
         另一行\linebreak[2]
         另一行\linebreak[0]
         最后一行
+
+    \section{字体}
+        \subsection{预设字体}
+            % 中文没有西文那么多的变体，许多字体都是独立的。
+            % 一般只使用不同的字体族区分中文。
+            % 在 xeCJK 宏包下，中文和西文字体的选择命令是分开的。
+            {\CJKfamily{zhhei}这是黑体}\newline
+            {\CJKfamily{zhkai}这是楷体}\newline
+            % 不同的系统下，字体族可能会有差异。此外还有 zhsong, zhfs。
+            % xeCJK 宏包还预定义了一些字体命令。
+            {\songti 宋体} \quad {\heiti 黑体}\newline
+            {\fangsong 仿宋} \quad {\kaishu 楷书}\newline
+            % ctex 宏包还定义了一套组合的字体，使文章中实现像西文一样的粗体、意大利体等效果。
+            % 比如 Windows 系统下，rm 是宋体，bf 是黑体，it 是楷体，sf 是幼圆，tt 是仿宋。
+            {\CJKfamily{rm}这是宋体}\newline
+            \textbf{粗体} \quad \textit{斜体}       % 等同于 \bfseries, \itshape 命令。
+            % 使用其他字体时，则可能出现由于找不到字体的情况出错。
+            % NOTE: 这部分字体设置可在下面文件中更改
+            % ".../texlive/2021/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-windows.def"
+            % 在文件中，ctex 宏包通过使用下面的命令为某个字体的变体指定代替的其他字体
+            % \setCJKmainfont[BoldFont=SimHei, ItalicFont=KaiTi, BoldItalicFont=LiSu]{SimSun}
+            % 和西文中 \setmainfont 类似。
+            % 使用 \renewcommand\CJKrmdefault{font} 可以将全文使用的 rm 字体族替换为你制定的字体族。
+            % 使用 \renewcommand\CJKfamilydefault{\CJKsfdefault}，可以将全文默认的字体族修改为 sf 字体族。
+
+        \subsection{更多字体}
+            % 使用下面的命令修改预设字体
+            % \setCJKmianfont[optiions]{font1}         % rm
+            % \setCJKsansfont[optiions]{font2}         % sf
+            % \setCJKmonofont[optiions]{font3}         % tt
+            %\CJKfamily{tt}{印刷字体}\newline
+            % 5.1 最后给了一个 option 的实例。
+            % xeCJK 宏包还给出了一个自定义字体族的命令。
+            %\setCJKfamilyfont{defined_name}[options]{font4}
+            % 使用这个命令后，就可以使用你定义的字体族名称调用字体了。
+            %\CJKfamily{pen}{钢笔手写体}
+        
+    \section{强调}
+        % --------------- 使用 xelatex 编译 ----------------
+        %\CJKunderdot{下加点}\newline
+        %\CJKunderline{下划线}\newline
+        %\CJKunderdblline{双下划线}\newline
+        %\CJKunderwave{波浪线}\newline
+        %\CJKsout{横删除线}\newline
+        %\CJKxout{斜删除线}\newline
+        \begin{CJKfilltwosides}{5cm}
+            分散对齐。
+        \end{CJKfilltwosides}\newline
+        \emph{强调}
+        % "https://www.ctan.org/tex-archive/languages/chinese/CJK/cjk-4.8.4/texinput/#CJKfntef.sty"
+        % --------------- 使用 xelatex 编译 ----------------
+        % 使用 CJKfntef 宏包后，原来的命令 \emph 如果被改为下划线格式，同样可以使用 \normalem 改回原来的定义。
+        % 在 ctex 宏包或文档类中，也可以使用 fntef 选项调用 CJKfntef
+
+    \section{字号}
+        % 在 LaTeX 中，字号有 0~8 和 -0~-6 这几类，分别代表 初号、一号到八号和小初号、小一号到小六号。
+        {\zihao{0} 初号}\newline
+        {\zihao{-0} 小初号}\newline
+        {\zihao{1} 一号}\newline
+        {\zihao{-1} 小一号}\newline
+        {\zihao{4} 四号}\newline
+        {\zihao{8} 八号}\newline
+        % ctex 的文档类提供了两个默认字体大小的选项，c5size 和 cs4size，
 
 \end{document}
 

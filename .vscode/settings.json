@@ -1,0 +1,22 @@
+{
+    "latex-workshop.latex.recipes": [
+        /*{
+            "name": "xelatex (xelatex)", 
+            "tools": [
+                "xelatex"
+            ]
+        }, */
+        /*{
+            "name": "latexmk (lualatex)",
+            "tools": [
+                "lualatexmk"
+            ]
+        },*/
+        {
+            "name": "latexmk",
+            "tools": [
+                "latexmk"
+            ]
+        }
+    ]
+}

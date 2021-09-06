@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.8.3)  27 AUG 2021 19:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.8.3)  6 SEP 2021 22:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -557,45 +557,69 @@ Package: inputenc 2021/02/14 v1.3d Input encoding file
 \inpenc@posthook=\toks17
 ) (c:/texlive/2021/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
-) (c:/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+) (c:/texlive/2021/texmf-dist/tex/latex/fonttable/fonttable.sty
+Package: fonttable 2017/06/06 v1.6c displays a font
+\f@tm=\count195
+\f@tn=\count196
+\f@tp=\count197
+\f@tdim=\dimen140
+\ftablewidth=\dimen141
+\fntcolwidth=\dimen142
+) (c:/texlive/2021/texmf-dist/tex/generic/ulem/ulem.sty
+\UL@box=\box50
+\UL@hyphenbox=\box51
+\UL@skip=\skip49
+\UL@hook=\toks18
+\UL@height=\dimen143
+\UL@pe=\count198
+\UL@pixel=\dimen144
+\ULC@box=\box52
+Package: ulem 2019/11/18
+\ULdepth=\dimen145
+) (c:/texlive/2021/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2011/12/19 v6.7a set line spacing
+)
+\mylen=\skip50
+\mybox=\box53
+ (c:/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2021-07-12 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count195
-\l__pdf_internal_box=\box50
+\l__color_backend_stack_int=\count199
+\l__pdf_internal_box=\box54
 ) (./Letter_en.aux)
 \openout1 = `Letter_en.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OT2/cmr/m/n on input line 16.
-LaTeX Font Info:    Trying to load font information for OT2+cmr on input line 16.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OT2/cmr/m/n on input line 44.
+LaTeX Font Info:    Trying to load font information for OT2+cmr on input line 44.
  (c:/texlive/2021/texmf-dist/tex/latex/cyrillic/ot2cmr.fd
 File: ot2cmr.fd 2001/08/11 v3.2c Computer Modern Cyrillic font definitions
 )
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 16.
-LaTeX Font Info:    Trying to load font information for LGR+cmr on input line 16.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 44.
+LaTeX Font Info:    Trying to load font information for LGR+cmr on input line 44.
  (c:/texlive/2021/texmf-dist/tex/latex/cbfonts-fd/lgrcmr.fd
 File: lgrcmr.fd 2017/07/29 v1.2 Greek European Computer Regular
 )
-LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    ... okay on input line 44.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 17.
+(Font)              <12> on input line 45.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 17.
+(Font)              <8> on input line 45.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 17.
+(Font)              <6> on input line 45.
  (./Letter_en.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 3.
@@ -608,34 +632,66 @@ LaTeX Font Info:    External font `cmex10' loaded for size
  [1
 
 {c:/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
-LaTeX Font Info:    Trying to load font information for T1+cmss on input line 174.
+LaTeX Font Info:    Trying to load font information for T1+cmss on input line 205.
  (c:/texlive/2021/texmf-dist/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 175.
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 206.
  (c:/texlive/2021/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    Trying to load font information for OT1+pzc on input line 218.
+LaTeX Font Info:    Trying to load font information for OT1+pzc on input line 252.
  (c:/texlive/2021/texmf-dist/tex/latex/psnfss/ot1pzc.fd
 File: ot1pzc.fd 2020/03/25 font definitions for OT1/pzc.
 )
 LaTeX Font Info:    Font shape `OT1/pzc/m/n' in size <14> not available
-(Font)              Font shape `OT1/pzc/m/it' tried instead on input line 218.
- [3] (./Letter_en.aux) ) 
+(Font)              Font shape `OT1/pzc/m/it' tried instead on input line 252.
+LaTeX Font Info:    Trying to load font information for T1+pbk on input line 253.
+ (c:/texlive/2021/texmf-dist/tex/latex/psnfss/t1pbk.fd
+File: t1pbk.fd 2001/06/04 font definitions for T1/pbk.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 203--259
+
+ []
+
+[3]
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 312.
+ (c:/texlive/2021/texmf-dist/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) [4]
+Underfull \hbox (badness 10000) in paragraph at lines 344--363
+
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 374--393
+
+ []
+
+[6]
+Underfull \hbox (badness 10000) detected at line 476
+\T1/cmr/m/n/10 Some stretched text
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 485
+\T1/cmr/m/n/10 A framed box
+ []
+
+[7] (./Letter_en.aux) ) 
 Here is how much of TeX's memory you used:
- 3180 strings out of 478542
- 49139 string characters out of 5854403
- 347599 words of memory out of 5000000
- 21106 multiletter control sequences out of 15000+600000
- 421554 words of font info for 58 fonts, out of 8000000 for 9000
+ 3517 strings out of 478542
+ 53777 string characters out of 5854403
+ 388860 words of memory out of 5000000
+ 21415 multiletter control sequences out of 15000+600000
+ 432892 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 48i,6n,60p,518b,189s stack positions out of 5000i,500n,10000p,200000b,80000s
-{c:/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}{c:/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc} <c:/Users/X/.texlive2021/texmf-var/fonts/pk/ljfour/lh/lh-ot2/wnr10.600pk>{c:/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cbfonts/grmn1000.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfcc1000.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfsl1000.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfso1000.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfsx1000.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb><c:/texlive/2021/texmf-dist/fonts/type1/urw/zapfchan/uzcmi8a.pfb>
-Output written on Letter_en.pdf (3 pages, 281478 bytes).
+ 48i,7n,60p,518b,189s stack positions out of 5000i,500n,10000p,200000b,80000s
+{c:/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{c:/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc} <c:/Users/X/.texlive2021/texmf-var/fonts/pk/ljfour/lh/lh-ot2/wnr10.600pk>{c:/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cbfonts/grmn1000.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfcc1000.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm0500.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm2488.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfsl1000.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfso1000.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfsx1000.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb><c:/texlive/2021/texmf-dist/fonts/type1/urw/bookman/ubkd8a.pfb><c:/texlive/2021/texmf-dist/fonts/type1/urw/zapfchan/uzcmi8a.pfb>
+Output written on Letter_en.pdf (7 pages, 495758 bytes).
 PDF statistics:
- 124 PDF objects out of 1000 (max. 8388607)
- 74 compressed objects within 1 object stream
+ 185 PDF objects out of 1000 (max. 8388607)
+ 112 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
