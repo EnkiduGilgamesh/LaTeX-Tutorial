@@ -1,0 +1,465 @@
+%-*- coding: UTF-8 -*-
+%-*- Paragraph.tex -*-
+%-*- Paragraph and environment
+
+\documentclass{article}
+
+\usepackage{ragged2e}                   % Hyphenation in other environment. 
+\usepackage{lettrine}                   % Drop Capital
+\usepackage{shapepar}                   % Paragraph shape
+\usepackage{enumitem}                   % Enhance the enumerate
+\usepackage{fancyvrb}                   % Use verbatim as a parameter
+\usepackage{cprotect}                   % Use verbatim as a parameter
+\usepackage{shortvrb}                   % Short \verb
+\usepackage{listings}                   % Code
+\usepackage{pifont}                     % Circled number
+
+\setlength\parskip{0pt}
+
+\newenvironment{myitemize}{%              define list environment myitemize
+    \begin{list}{\textbullet}{%
+        \setlength\topsep{0pt} \setlength\partopsep{0pt}
+        \setlength\parsep{0pt} \setlength\itemsep{0pt}
+    }}
+    {\end{list}}
+
+\newenvironment{mycenter}{%               define trivlist environment mycenter
+    \begin{trivlist}
+        \centering\item[]}     
+    {\end{trivlist}}
+
+\newtheorem{thm}{Theorem}[section]      % define theorem environmrnt thm
+
+\newsavebox\verbbox                     % define verbbox       
+\begin{lrbox}\verbbox
+    \verb"#$%^&*()"
+\end{lrbox}
+
+\title{Paragraph and Environment}
+\author{Wenren Muyan}
+\date{\today}
+
+\begin{document}
+    \maketitle
+
+    \begin{abstract}
+        Paragraph and Environment
+    \end{abstract}
+
+    \tableofcontents
+
+    \section{Paragraph}
+        \subsection{Indent}
+            % The indent at the beginning of a paragrapph
+            The first line. \par
+            The second line. \par
+            \noindent The third line. \par
+            % The command \indent is as wide as the \parindent
+            \indent The forth line. \par
+            \indent\indent The fifth line. \par
+        \subsection{Line Spacing}
+            % The line spacing is controlled by \parskip which is defaultly set a rubber length, 
+            % so that the line spacing can change in a scale in need to make it easy to composing and the article more good-looking. 
+            % Use \setlength can change the value of it. 
+            % TODO: Put this section in Letter
+        \subsection{Alignment}
+            % The paragraph defaultly distributes evenly betwwen two margins. 
+            % Align on the right.  
+            {
+                \raggedleft Hello!\par   % The left in the command means the left margin can be not aligned. 
+                \raggedleft I am at the right margin. \par
+                \raggedleft I am at the right margin. 
+            }\par
+            % centering
+            {
+                \centering Hello!\par
+                \centering I am in the center!
+            }
+            % FIXME: Why the second line not align as the command?
+            % Alignment environment. 
+            \begin{flushright}
+                Hello!\par
+                I am at the right margin. 
+            \end{flushright}
+            \begin{center}
+                Hello!\par
+                I am in the center. 
+            \end{center}
+        \subsection{Hyphenation}
+            % Hyphenation would be used when a long word can not put into the left space of a line. 
+            The is a very very very very very very very very 
+            long sentence with a longlonglonglong word. \par
+            % Use the \- command to tell the compiler where you want to use a hyphenation. 
+            The is a very very very very very very very very 
+            long sentence with a long\-longlonglong word. 
+            % NOTICE: The hyphenation is only used in distributed alignment. 
+            % Package Ragged2e can use hypenation in other alignment environment. 
+                % The package also provide justify environment and \justifying declaration command to 
+                % go back to distributed alignment. 
+            % TODO: \sloppy, \fussy
+            % Package microtype can adjust the distance between letters in one word to improve the wrapping around in pdfTeX. 
+            % TODO: See whether the microtype support XeTeX now in "./rsc/microtype.pdf". 
+        \subsection{Paragraph Width}
+            % Change the width of a paragraph
+            {
+                \setlength\leftskip{10cm}
+                \setlength\rightskip{2cm}
+                The leftskip is the distance to the left margin, 
+                and the rightskip is the distance to the right margin. 
+            }
+            % FIXME: Why no effect?
+        \subsection{Paragraph Shape}
+            % A special indent is hanging indent, which can be controlled by
+                % command \hangindent telling the compiler the indent length,  
+                % and \hangafter telling the comiler the amount of the indent lines. 
+            {
+                \hangindent=5pc \hangafter=-2           % The value of the commands can be positive or negative. 
+                Donald Knuth’s TEX, a computerized typesetting system, provides nearly
+                everything needed for high-quality typesetting of mathematical notations
+                as well as of ordinary text. It is particularly notable for its flexibility, its
+                superb hyphenation, and its ability to choose aesthetically satisfying line
+                breaks. Because of its extraordinary capabilities, TEX has become the
+                leading typesetting system for mathematics, science, and engineering and
+                has been adopted as a standard by the American Mathematical Society. 
+            }\par
+            % Package \lettrine can generate Drop Capital effect. 
+            {
+                \lettrine{O}ver this period of one hundred years, the CPC has united and 
+                led the people in toppling the “three mountains” of imperialism, feudalism 
+                and bureaucrat-capitalism, creating the People’s Republic of China (PRC), and 
+                completing the New Democratic Revolution and the Socialist Revolution. The 
+                political and institutional foundations were thereby laid down to ensure 
+                the rights and freedoms of the people. Through successes and setbacks, 
+                China has pioneered reform and opening up, set the goal of socialist modernization, 
+                and ushered in a new era of building socialism with Chinese characteristics. 
+                The Chinese nation has stood up, become better off, and grown in strength. 
+                Now, it is embarking on a new journey to build a modern socialist country in all respects.
+            }\par
+            % TODO: How to let the Drop Cap not in margin?
+            % Command \parshape an compose much special shaped paragraph. 
+                % See how to use it in 
+                % Donald E. Knuth's book "Computers & Typesetting, Volume A: The TeXbook". 
+                % or in "./rsc/teximpat.pdf"
+            % Package shapepar provide some simple APIs of \parshape, and predefines some shapes that can be directly used. 
+            \heartpar{
+                Green, green the reed,
+                Dew and frost gleam.
+                Where’s she I need?
+                Beyond the stream.
+                Upstream I go,
+                The way is long.
+                Downstream I go,
+                She’s thereamong.
+                White, white the reed,
+                Dew not yet dried.
+                Where’s she I need?
+                On the other side.
+                Upstream I go,
+                Hard is the way.
+                Downstream I go,
+                She’s far away.
+                Bright, bright the reed,
+                Dew and frost blend.
+                Where’s she I need?
+                At river’s end.
+                Upstream I go,
+                The way does wind.
+                Downstream I go,
+                She’s far behind.
+            }
+            % More shape see "./rsc/shapepar.pdf"
+
+    \section{Text Environment}
+        % LaTeX has predefined quote, quotation, verse, and abstract text environment. 
+        % I have used environment abstract in the beginning of this article. 
+            % The abstract environment name is configured by \abstractname. 
+            % TODO: How to set your own abstact name?
+        In the film \textit{The Shawshank Redemption}, Reid said, 
+        \begin{quote}           % no indent
+            Some birds are not meant to be caged; their feathers are just too bright. 
+        \end{quote}
+        There are such paragraphs in \textit{The Communist Party of China and Human Rights Protection -- A 100-Year Quest}
+        \begin{quotation}       % indent
+            The year 2021 marks the centenary of the Communist Party of China (CPC). 
+            Over the past century, the CPC has invested a huge effort in human rights 
+            protection, adding significantly to global human rights progress.
+
+            A hundred years ago, the CPC came into being – its mission to salvage the 
+            country and save the Chinese people at a perilous time of domestic upheaval 
+            and foreign aggression. This was an epoch-changing moment. Under the leadership 
+            of the CPC, the Chinese people embarked on a new journey towards prosperity, 
+            national rejuvenation, and wellbeing.
+        \end{quotation}
+        The \textit{Where is She?} is a Chinese classical poemtry in \textit{the Book of Songs}
+        \begin{verse}
+            Green, green the reed,
+            Dew and frost gleam.
+            Where’s she I need?
+            Beyond the stream.
+            Upstream I go,
+            The way is long.
+            Downstream I go,
+            She’s thereamong.
+            
+            White, white the reed,
+            Dew not yet dried.
+            Where’s she I need?
+            On the other side.
+            Upstream I go,
+            Hard is the way.
+            Downstream I go,
+            She’s far away.
+            
+            Bright, bright the reed,
+            Dew and frost blend.
+            Where’s she I need?
+            At river’s end.
+            Upstream I go,
+            The way does wind.
+            Downstream I go,
+            She’s far behind.
+        \end{verse}
+    
+    \section{Enumerate Environment}
+        \subsection{Introduction}
+            The first situation is: 
+            \begin{enumerate}                                           % number
+                \item The first
+                % The command \item have a parameter to configure personalized number or keyword. 
+                \item The second
+                \begin{itemize}                                         % no number
+                    \item The first
+                    \item The second
+                    \begin{description}                                 % actually the \item with its parameter
+                        \item[1st] One
+                        \item[2nd] two
+                        \item[3rd] Three
+                    \end{description}
+                    \item The third
+                \end{itemize}
+                \item The third
+                \item[3a] The A part of the third                       % manual number
+                \item[\dag] The most important part of the third        % special symbol
+            \end{enumerate}
+            % It can be nested in four levels.
+        
+        \subsection{Enumerate}
+            % The number of the enumerate is controlled by a group of counter. 
+                % Whenever enter a new enumerate environment, the counter will be reset to 0. 
+                % Whenever meet a \item without parameter, the counter plus 1. 
+                % There are four default counter in LaTeX, which name are enumi, enumii, enumiii, enumiv
+            % Command \the with conuter_name behind will outout the value of the counter. 
+                % Actually, the enumerate environment use it to output the number. 
+            The first situation is: 
+            \begin{enumerate}
+                \item Number \theenumi, \labelenumi     % a dot will follow the number with lable command
+                \item Number \theenumi, \labelenumi
+                \item Number \theenumi, \labelenumi
+            \end{enumerate}
+            The second situation is: 
+            % Other styles of counter number: 
+            \begin{enumerate}
+                \item Number
+                    \arabic{enumi}, \roman{enumi}, \Roman{enumi}, 
+                    \alph{enumi}, \Alph{enumi}, \fnsymbol{enumi}
+                \item Number
+                    \arabic{enumi}, \roman{enumi}, \Roman{enumi}, 
+                    \alph{enumi}, \Alph{enumi}, \fnsymbol{enumi}
+                \item Number
+                    \arabic{enumi}, \roman{enumi}, \Roman{enumi}, 
+                    \alph{enumi}, \Alph{enumi}, \fnsymbol{enumi}
+            \end{enumerate}
+            The third situation is: 
+            % Different level of counter will defaultly use different styles of counter number, which are set ahead of time. 
+                % We can change the configured style manually
+            {
+                \renewcommand\theenumi{\roman{enumi}}
+                \begin{enumerate}
+                    \item The first
+                    \item The second
+                \end{enumerate}
+            }
+            % Except the enumerate environment, the pages, sections, and so on also use counter. For example: 
+            This sentence is in Page \thepage. 
+        \subsection{Custom Counter}
+            % It would be needed to define your own counter. 
+            % The grammer is like underneath. 
+            \newcounter{mycnt}
+            \setcounter{mycnt}{0}                                           % set the origin value
+            \renewcommand\themycnt{\arabic{mycnt}}                          % set a output command
+            \stepcounter{mycnt}The counter's value is \themycnt . \par      % the counter plus 1
+            \stepcounter{mycnt}The counter's value is \themycnt . \par
+            \addtocounter{mycnt}{2}The counter's value is \themycnt . \par  % the counter plus 2
+            \addtocounter{mycnt}{-3}The counter's value is \themycnt . \par   % the counter subtract 1
+            % The command \value{counter} will return the value of the certain counter as a parameter. 
+            % The \newcounter could be followed by another counter name as its parameter. 
+                % That means when the counter used in parameter increases, the newcounter will be reset to zero. 
+                % NOTICE: That is how counter subsection, subsubsection... work. 
+            % EXTENSION: Package amsmath extends the function of counter, so that it will be more friendly in math equation. 
+                % See the usage in "./rsc/amsmath.pdf"
+            % Package chngcntr provides function similar to amsmath. 
+                % See the usage in "./rsc/chngcntr.pdf"
+            % EXTENSION: Further, the counter can be used in complex condition control and loop. 
+                % Package ifthen, and calc provide some function of them. 
+                % See in "./rsc/ifthen.pdf" and "./rsc/rsc/calc.pdf"
+        \subsection{Itemize}
+            \begin{itemize}
+                \item One \textbullet
+                \item Two \textbullet
+                \begin{itemize}
+                    \item One {\normalfont\bfseries \textendash}
+                    \item Two {\normalfont\bfseries \textendash}
+                    \begin{itemize}
+                        \item One \textasteriskcentered
+                        \item Two \textasteriskcentered
+                        \begin{itemize}
+                            \item One \textperiodcentered
+                            \item Two \textperiodcentered
+                        \end{itemize}
+                    \end{itemize}
+                \end{itemize}
+            \end{itemize}
+            % The \item actually use the \lableitemi, \labelitemii..., 
+                % so we can reset the command to another style like enumerate. 
+        \subsection{Description}
+            % Also, we can modify the style of description environment number label 
+                % which defined by the \descriptionlabel
+            \renewcommand\descriptionlabel[1]{\normalfont\Large\itshape\textbullet #1}
+            \begin{description}
+                \item[1st] One
+                \item[2nd] Two  
+            \end{description}
+        \subsection{List}
+            % Enumerate, itemize, description are all defined in list environment
+                % The list is usually used to define new environment, 
+                % of course, it can be used directly with the similar gramer to the definition. 
+                % It has many parameters. See the pictures. 
+            % TODO: graphic
+            % See the difinition in the Introduction
+            \begin{myitemize}
+                \item One
+                \item Two
+            \end{myitemize}
+            % There is another special environment trivlist can generate a list environment without number label
+                % Some environments that seems like irrelevant with enumerate, are usually defined by it. 
+                % For example, the center enviroment is defined by it. 
+                % The definition is the same as the mycenter in Introduction. 
+                % More standard classes see in "./rsc/standardclasses.pdf"
+            \begin{mycenter}
+                One\par
+                Two
+            \end{mycenter}
+            % The list environment is a little complex to use, 
+                % and the enumerate environment configuration is not easy to change, too. 
+            % Package enumitem provide methods to use parameters in enumerate. 
+            %\begin{enumerate}[%
+            %    itemsep=0pt, parsep=0pt, lable=(\arabic*)]
+            %    \item One
+            %    \item Two
+            %\end{enumerate}
+            % FIXME: label undifined
+                % See the documentation "./rsc/enumitem.pdf"
+    \section{Theorem Environment}
+        % The theorem environment will generate a title, a number and text with a certain style. 
+            % Define the Theorem in Introduction. 
+            % The parameter in [] is a counter or other theorem environment which is optional.
+        \begin{thm}[the Pythagorean theorem]
+            The square of the hypotenuse of a right triangle is equal to 
+            the sum of the squares of the two sides. 
+        \end{thm}
+        \begin{thm}
+            The two sides of a triangle add up to more than the third. 
+        \end{thm}
+        % However, the theorem environment's style is unchangable. 
+            % The package theorem and ntheorem provide some comamnds to change the style of theorem environment. 
+            % See its usag in "./rsc/theorem.pdf" and "./rsc/ntheorem.pdf". 
+            % The package thmtools make it easier to use ntheorem and amsthm
+            % See in "./rsc/thmtools.pdf"
+    \section{Verbatim}
+        % It's difficult to use special symbol or punctuation in LaTeX, especially when you want to use it frequently. 
+            % Verbatim can output what you put without regard them as special symbos. 
+            % NOTICE: the verbatim will use the typewriter font. 
+            % It begin with a symbol and end with a same symbol as the beginner no matter what you use. 
+        \verb"\/{}#$%&~!"\par
+        \verb!\LaTeX \& \TeX!
+        \verb*"1 2  3   4"
+        % Verbatim can be also used as an environment. 
+        \begin{verbatim}
+            #!usr/bin/env perl
+            $name = "guy"; 
+            print "Hello, $name!\n"; 
+        \end{verbatim}
+        % The verbatim and other environment can not be used as a parameter in other command. 
+            % TODO: Use lrbox environment to save them as a customer box and then use the box as a parameter. 
+            % See the verbbox's definition in Introduction. 
+        \usebox\verbbox \fbox{\usebox\verbbox}\par
+        % Package fancyvrb provides some special commands help us do the above. 
+            % Also, fancyvrb extends the verbatim so that we can modify its font, frames, color and so on. 
+            % See in "./rsc/fancyvrb.pdf"
+        \SaveVerb{myverb}|#$@$%^&|
+        \fbox{\UseVerb{myverb}}\par
+        % The cprotect do the similar things to the fancyvrb. 
+        \cprotect\fbox{\verb|#$@$\%^&|}\par
+        % Package verbatim extends the verbatim environment, 
+            % which also provide a command \verbatiminput to copy the text in a file you give to. 
+            % See in "./rsc/verbatim.pdf"
+        % Package can define a short name to \verb. 
+        {                               % NOTICE: The symbol you define may conflict with some commands you use behind. 
+            \MakeShortVerb"             % use " as the verbatim symbol
+            verbatim "\LaTeX"
+        }
+
+    \section{Code Environment}
+        % Package listings provides various languages environment with code highlight. 
+        \lstset{
+            numbers=left,
+            numberstyle=\footnotesize,
+            basicstyle=\sffamily,
+            keywordstyle=\bfseries,
+            commentstyle=\rmfamily\itshape,
+            stringstyle=\ttfamily
+        }                                               % The set is optional. 
+        \begin{lstlisting}[language=C]
+            /* hello.c */
+            # include <stdio.h>
+            void main(){
+                printf("Hello. \n"); 
+            }
+        \end{lstlisting}
+        {
+            \lstset{language=C}
+            %Use \lstinlilne!typedef char byte!
+            % FIXME: How to use inline code?
+        }
+        % Package listing can also set the color, the background and so on. 
+            % See more details in "./rsc/listings.pdf"
+
+    \section{Tabbing Environmrnt}
+        % TODO: Page 116
+
+    \section{Footnote}
+        This is a footnote\footnote{\textbackslash footnote\{text\}}. \par
+        This is another foodnote\footnote[1]{The footnote number is still 1}. \par
+        % TODO: use footnote in minipage
+        % The footnote uses the counter footnote, and in minipage it uses mpfootnote. 
+            % We can change the style of the number of the footnote like the section 3.3. 
+        \renewcommand\thefootnote{\fnsymbol{footnote}}
+        A symbol number footnote\footnote{}. \par
+        \renewcommand\thefootnote{\textcircled{\arabic{footnote}}}
+        A circled number footnote\footnote{}. \par
+        % The circled number is ugly, use package pifont instead. 
+            % \ding outputs the character whose encoding is the number we put.  
+            % See more details in "./rsc/psnfss2e.pdf"
+        \renewcommand\thefootnote{\ding{\numexpr171+\value{footnote}}}
+        A more beautiful circled number foootnote\footnote{}. \par
+        % The footnote can not used in box or table. But we could use \footnotemark and \footnotetext instead. 
+            % For example
+        \begin{tabular}{r|r}
+            Independent variable & Dependent varible\footnotemark \\
+            \hline
+            $x$ & $y$
+        \end{tabular}
+        \footnotetext{$y=x^2$}
+    \section{New}
+        
+\end{document}
