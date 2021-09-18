@@ -13,6 +13,8 @@
 \usepackage{shortvrb}                   % Short \verb
 \usepackage{listings}                   % Code
 \usepackage{pifont}                     % Circled number
+\usepackage{varwidth}                   % varwidth environment
+\usepackage{amsfonts}                   % 
 
 \setlength\parskip{0pt}
 
@@ -33,6 +35,16 @@
 \newsavebox\verbbox                     % define verbbox       
 \begin{lrbox}\verbbox
     \verb"#$%^&*()"
+\end{lrbox}
+
+\newsavebox\verbatimbox
+\begin{lrbox}\verbatimbox
+    \begin{minipage}{20em}
+        \begin{verbatim}
+            #!/bin/sh
+            cat ~/${file}$
+        \end{verbatim}
+    \end{minipage}
 \end{lrbox}
 
 \title{Paragraph and Environment}
@@ -436,8 +448,111 @@
 
     \section{Tabbing Environmrnt}
         % TODO: Page 116
+        \begin{tabbing}
+            Style\hspace{3em} \= Author \\
+            Plain \TeX \> Donald \\
+            LaTeX \> Leslie Lamport
+        \end{tabbing}
+        
+        \noindent\hfill$*$\hfill$*$\hfill$*$\hfill
 
-    \section{Footnote}
+        \begin{tabbing}
+            Style\hspace{3em} \= Author \kill
+            Plain \TeX \> Donald \\
+            LaTeX \> Leslie Lamport
+        \end{tabbing}
+
+        % \= set a TAB
+        % \' the text front and latter will be centered around the current TAB
+        % \` align right with the latter text
+        % \< skip to the former TAB
+        % \> skip to the latter TAB
+        % \+ every line behind this line skips to the right one time
+        % \- every line behind this line skips to the left one time
+        % \pushtabs save the current TAB
+        % \poptabs recover the TAB saved by \pushtabs
+        % the common command above in tabbing environment are replaced by \a=, \a', \a` and so on. 
+        \newcommand\kw{\textbf}
+        \begin{tabbing}
+            
+            \pushtabs
+            Algorithm: Do a binary search for x in list[L, H]. \\
+            \qquad\=\+\kw{interger} $L, H, M, J$\\
+            \kw{while} \=\+ $L \leq H$ \kw{do} \` $L$ and $H$ are left and right margins. \\
+            % FIXME: \lep
+                $M \gets \lfloor(L+H)/2\rfloor$ \` $M$ is the center dot. \\
+                \kw{case} \=\+\\
+                    condition \= foo \+\kill
+                    $x > A[M]$: \' $H \gets M-1$ \\
+                    $x < A[M]$: \' $H \gets M+1$ \\
+                    \kw{else}: \' \= $j \gets M$ \` Find $x$ and return its place. \\
+                        \> \kw{return}$(j)$ \\
+                \<\< \kw{endcase} \-\-\-\\
+            $j \gets 0$\\
+            \kw{return}$(j)$ \-\\
+            \poptabs
+            Example: \\
+            $A = \{2, 3, 5, 7, 11\}$, $x = 3$\\
+            \qquad\=\+ $M$\qquad \= $L$\qquad \= $H$\qquad \= \\
+                        None     \> 1         \> 5          \> initial value, enter the loop \\
+                        3        \> 1         \> 2          \> $H$ changes \\
+                        2        \> None      \> None       \> find $x$, output place 2. 
+        \end{tabbing}
+
+    \section{Box in vertical}
+        % The vertical box \vspace{length}, \vfill, \vspace{\fill} is just like the horizontal box command. 
+            % See more details in "~/LaTeX/2_Text/2.1_Letter/Letter.tex
+        % These command is used in the beginning of the latter line. 
+        There is a \parbox{4em}{paragraph box}. \par
+        There is another 
+        \begin{minipage}{4em}
+            paragraph box
+        \end{minipage}. \par
+        % The paragraph configured like \parindent, \parskip and so on can be used in minipage environment. 
+        % Command \parbox and minipage has three optional parameters. 
+            % And their total command is \parbox[base_line_position][height][text_position]{width}{text}
+            % The base_line_position is the box position and it can use c-center, t-top, b-buttom, which is defaulty c. 
+            % The text_position is the text in the box's position, and it can use c, t, b, and s-distributed. 
+        \begin{minipage}[c][2.5cm][t]{5em}
+            The grass grows  
+        \end{minipage}
+        \begin{minipage}[c][2.5cm][c]{8em}
+            on the edge of a lonely stream,
+        \end{minipage}
+        \begin{minipage}[c][2.5cm][b]{15em}
+            and there is a spring tide with the sound of deep trees. 
+        \end{minipage}
+        \begin{minipage}[c][2.5cm][s]{14em}
+            \setlength\parskip{0pt plus 1pt}
+            When showers fall at dusk, the river overflows; \par
+            A lonely boat athwart the ferry floats at ease.
+        \end{minipage}\par
+        % In 5 Verbatim, the \verb can save in the lrbox, while the verbatim environment can not. 
+            % We can write the verbatim in minipage, and then save it in lebox. 
+            % See the definition in Introduction. 
+        \fbox{\usebox\verbatimbox}\quad\fbox{\usebox\verbatimbox}
+        % Package fancyvrb also provides \SaveVerbatim and \UseVerbatim to do the above job. 
+        % Package varwidth provides varwidth to generate environment with settled max width, 
+            % while the width can be changed with your text input. 
+        \fbox{
+            \begin{varwidth}{10cm}
+                Natural \par
+                width
+            \end{varwidth}
+        }
+    \section{Page Turning}
+        % \raggedbottom means that every page will keep their natural height. 
+        % \flushbottom means that all the page will align at the buttom of the paper. 
+        % \pagebreak[rank] can skip to the next page with four ranks, 0, 1, 2 and 4, with 4 in force, \nopagebreak is on the contrary. 
+        \pagebreak[4]
+        % \enlargethispage{length} can increase the height of the page provisionally. 
+        \enlargethispage{8em}
+        % \newpage can skip to the next page manually. 
+            % It is actually equal to the \paragraph and then \vfill the middle text. 
+            % It can not work continuously, if it needed, use a \mbox{} in every blank page. 
+        % TODO: \clearpage, \cleardoublepage and float. 
+
+    \section{Footnote\protect\footnote{Footnote in the section}}
         This is a footnote\footnote{\textbackslash footnote\{text\}}. \par
         This is another foodnote\footnote[1]{The footnote number is still 1}. \par
         % TODO: use footnote in minipage
@@ -460,6 +575,48 @@
             $x$ & $y$
         \end{tabular}
         \footnotetext{$y=x^2$}
-    \section{New}
+        % Footnote is not allowed to be used in section and annotation directly, 
+            % because it is a fragile command. 
+            % If you want to use in such environments, use \protect in front like what this section title do. 
+        % The line space between footnote is set by \footnotesep. 
+        % And the line between text and footnote is set by \footnoterule. 
+        % Package footmisc provides more command to configure footnote. 
+            % See in "./rsc/footmisc.pdf"
+    \section{Margin Paragraph}
+        The marginpar will display in the margins\marginpar{Marginpar}. \par
+        % The option text will display in the left side margin even number page. 
+        Configure the marginpar\marginpar[\hfill Left $\rightarrow$]{$\leftarrow$ Right}
+        {
+            \reversemarginpar
+            % FIXME: Not work?
+            The marginpar will display in the left side\marginpar{Marginpar}. 
+        }
+        % Marginpar is controlled by \marginparwidth, \marginparsep, \marginparpush. 
+        % Package geometry, marginnotr, mparhack and endnotes extend the function of marginpar. 
+
+
+    \section{Rule Box}
+        % Rule box is a solid box fill with ink. 
+            % \rule[lift_distance]{width}{height}
+        \rule{1pt}{1em}Middle\rule{1pt}{1em}\par
+        Left\rule[0.5ex]{2cm}{0.6pt}Right\par
+        \rule[-0.1em]{1em}{1em}Prove comlete. 
+
+    \section{Strut}
+        % Strut is used to be a placeholder, whose width or height is 0. 
+            % It is similar to the \phantom
+        \fbox{---}\par
+        \fbox{\strut---}\par
+        \fbox{\rule{0pt}{2em}---}
+
+    \section{Raise Box}
+        % Raise box is used to generate a box with lift distance, and we can put our text in it. 
+            % That is how the TeX symbol appears. 
+            % \raisebox{lift_distance}{height}[depth]{text}
+        \mbox{T\hspace{-0.1667em}
+            \raisebox{-0.5ex}{E}
+            \hspace{-0.125em}X}\quad
+            % FIXME: It is not equal to \TeX{}?
+        \TeX{}
         
 \end{document}
