@@ -1,0 +1,59 @@
+%-*- coding: UTF-8 -*-
+%-*- Structure.tex -*-
+%-*- Article Structure
+
+\documentclass{book}
+
+\usepackage{syntaxonly}             % Check the grammer
+
+\title{Article Structure\thanks{LaTeX}}
+\author{Wenren Muyan\thanks{Zhang}\\1st  \and Sam Young\\2nd}
+\date{\today}
+
+\includeonly{Chapter.tex}               % Choose files allowed to be compiled. 
+
+%\syntaxonly                % When compiling, only check the grammer, do not ouput the dvi or pdf file
+
+\begin{document}
+    % In article the title is not in a single page, while in book or report is in the contrary. 
+    % The options titilepage or notitlepage can control it. 
+
+    % LaTeX does not provide methods to change the title page style. 
+        % Since the title only uses once, we can change it manually. 
+    \frontmatter
+    \input{title.tex}
+
+    % The package titling provides methods to change the style through \maketitle. 
+        % See in "./rsc/titling.pdf"
+
+    \mainmatter
+    \tableofcontents
+    \include{Chapter.tex}       % include Chapter.tex
+    \include{Nothing.tex}       % Not in \includeonly file list
+                                
+
+    % FIXME: page
+
+    \chapter{Appendix}
+        % The chapters in append index will sort by letters and do not show in content. 
+            % See in the end of this article. 
+            % Package appendix can change the style of the append index, see in "./rsc/appendix.pdf"
+    \chapter{Matters}
+        % To book, it can be divided into front matter, main matter and back matter. 
+            % \frontmatter, \mainmatter, \backmatter
+            % The front matter and back matter are no numbers. 
+
+    \chapter{Multiple Files}
+        % \include{file_name} will put the code in the selected file to the command position. 
+            % Use \includeonly{file_list} to choose file allowed to be compiled. 
+        % \input{file_name} copy the code to the command position. Usually be used to input graphics code. 
+            % This command does not cause pageskip. 
+        \input{input.tex}
+
+    \chapter{Style of Chapter}
+        % Use titlesec package to change it. 
+            % See in "./rsc/titlesec.pdf"
+        % Chinese document see "./zh/Chapter_zh.tex"
+
+\end{document}
+

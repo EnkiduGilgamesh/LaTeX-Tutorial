@@ -1,0 +1,35 @@
+%-*- coding: UTF-8 -*-
+%-*- Structure.tex -*-
+%-*- Article Structure
+
+\documentclass{ctexart}
+
+\CTEXoptions[today=old]                     % samll, old
+\CTEXsetup[name={第,章},                    % 章节名前后的字
+        number={\chinese{section}},         % 数字的格式
+        format={\raggedleft\bfseries},      % 章节全局格式
+        nameformat={\sffamily},             % 章节名和编号格式，不包括后面标题
+        numberformat={\itshape},            % 编号格式，不包括章节名和标题
+        titleformat={\ttfamily},            % 标题格式，不包括章节名和编号
+        %aftername={\\\vspace{2ex}},         % 章节名和编号与标题之间的内容，仅对 part 和 chapter 有效
+        beforeskip={2cm},                   % 章节标题前的垂直距离
+        afterskip={5cm},                    % 章节标题后的垂直距离
+        indent={4em}                        % 章节标题的缩进长度
+    ]{section}                              % 对象类型
+% 只在中文文档下有用
+
+\title{Article Structure\thanks{LaTeX}}
+\author{Wenren Muyan\thanks{Zhang}\\1st  \and Sam Young\\2nd}
+\date{\today}
+
+\begin{document}
+    \maketitle
+    \tableofcontents
+
+    \section{无名}
+        这是内容。
+
+    \section{章节格式}
+        中文文档的章节格式调整方法请看导言区部分。
+        
+\end{document}
