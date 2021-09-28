@@ -16,7 +16,7 @@
 
 ### 2.4.1.1 Basic Classes
 
-Basic document classes include article, report and book. 
+Basic document classes include article, report and book.
 
 Document class options are:
 
@@ -73,7 +73,7 @@ $$
 1 in+hoffset+oddsidemargin+textwidth+right\_margin=paperwidth
 $$
 
-Package geometry make it easier. 
+Package **geometry** make it easier.
 
 ```latex
 \usepackage{geometry}
@@ -85,7 +85,7 @@ See more details in "./rsc/geometry.pdf".
 
 ### 2.4.1.3 Page Style
 
-Page style contains page number, footer, and header. 
+Page style contains page number, footer, and header.
 
 Set the style of page number simplily by using command `\pagenumbering{}`, for example:
 
@@ -120,7 +120,7 @@ When using myheadings, we can change the page style like underneath:
 \markboth{left_page_header}{right_page_header} % two sides page
 ```
 
-Package fancyhdr provide more options to change the page style. See more details in "./rsc/fancyhdr.pdf"
+Package **fancyhdr** provide more options to change the page style. See more details in "./rsc/fancyhdr.pdf"
 
 ## 2.4.2 Multiple Columns
 
@@ -133,11 +133,11 @@ Except the twocolumn options in document class, we can use `\twocolumn` and `\on
 \onecolumn
 ```
 
-In multiple page, the command `\newpage` and `\pagebreak` means going into next column, while `\clearpage` and `\cleardouble` page means going into next page. 
+In multiple page, the command `\newpage` and `\pagebreak` means going into next column, while `\clearpage` and `\cleardouble` page means going into next page.
 
 The distance between two columns is controlled by `\colunmsep` and the width of a column is controlled by `\columnwidth`, which value is equal to $(textwidth-columnsep)/2$ and is not recommendated to be modified.
 
-The width of the vertical line is controlled by `\columnseprule` whose default value is 0pt meaning that there is not a line. 
+The width of the vertical line is controlled by `\columnseprule` whose default value is 0pt meaning that there is not a line.
 
 Defaultly, only when one column is full of text, the next column will be used, which makes the unbalanced of two columns. Package Balance provide a simple command `\balance` to make it balanced with `\nobalance` in contrast.
 
@@ -163,11 +163,22 @@ For example:
 ```latex
 \newcommand\PRC{People's Republic of \emph{China}}
 \newcommand\love[2]{#1 loves #2 very much}
-\newcommand\hate[4][hate][verymuch]{#3 #1 #4 #2}
+\newcommand\hate[3][hate]{#2 #1 #3}
 ```
 
-For the second command, when we use `\love[Peter][Jane]`, it will ouputs:
->Peter loves Jane very much
+For the second command, when we use `\love{Peter}{Jane}`, it will ouputs:
+> Peter loves Jane very much
+
+And for the third command, we can use custom text in **[]** to replace the default parameter:
+
+```latex
+\hate[don't like]{I}{it}
+```
+
+The output will be:
+> I don't like it
+
+NOTE: There is only one default parameter allowed.
 
 ### 2.4.3.2 Renewcommand
 
