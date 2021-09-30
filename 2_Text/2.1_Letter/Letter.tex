@@ -1,124 +1,512 @@
 %-*- coding: UTF-8 -*-
 % Letter.tex
-% 文字与符号
+% Letetr and Symbol
 
-% 因为中文和西文环境不同，很多命令在中文环境下会出现不可预知的错误。
-% 请先参阅 "./ENG/Letter_en.tex"
+% ---------------------- Introduction ----------------------
+\documentclass{article}
 
-\documentclass[UTF8]{ctexart}
-\usepackage{CJKfntef}
+\usepackage[OT2,OT1,T1]{fontenc}        % text encoding selection, may have problem in lualatex
+\usepackage[greek,english]{babel}       % language, may have problem in lualatex. TODO: See the babel documentation. 
+\usepackage[utf8]{inputenc}             % FIXME: input encoding?
+\usepackage{textcomp}                   % provide special symbol command
+\usepackage{fonttable}
+\usepackage[normalem]{ulem}
+\usepackage{setspace}
+\newcommand\Emph{\textbf}
+%\usepackage{txfonts}                   % may conflict with fontspec
+%\usepackage{fontspec}
 
-% -------- 使用 xelatex 编译 ---------
-%\setCJKmainfont{Source Han Serif CN}            % 思源宋体
-%\setCJKsansfont{Source Han Sans CN}             % 思源黑体
-%\setCJKmonofont{FZQingKeBenYueSongJF}           % 方正清刻
+%\usepackage{ccfonts}
+%\usepackage[no-math]{fontspec}
 
-%\setCJKfamilyfont{pen}{LiDeBiao-Xing3}          % 徳彪钢笔行书
-% -------- 使用 xelatex 编译 ---------
+%\setmainfont{Garamond}                 % depend on fontspec, and do not contain greek letter and cyrillic. 
+%\setsansfont{Arial}                    % depend on fontspec
+%\setmonofont{Edwardian Script ITC}     % depend on fontspec
 
-\title{文字与符号}
-\author{闻人沐妍}
+%\newfontfamily\inkfamily{Ink Free}     % set new command inkfamily to use Ink Free, only support by fontspec package. 
+%\renewcommand\rmdefault{cmfib}         % change the rm family into cmfib
+
+\setlength\lineskiplimit{2.5bp}         % lineskiplimit
+\setlength\lineskip{2.5bp}              % lineskip
+
+\newlength\mylen                        % define mylen
+\setlength\mylen{2em}
+
+\newsavebox\mybox                       % define mybox
+\sbox\mybox{text text}
+
+\title{Letter and Symbol}
+\author{Wenren Muyan}
 \date{\today}
 
-%\newtheorem{}[]
+% ---------------------- Introduction ----------------------
 
 \begin{document}
     \maketitle
 
     \begin{abstract}
-        文字与符号的编辑
+        Input letter and symbol. 
     \end{abstract}
 
     \tableofcontents
 
-    \section{字母}
-        \subsection{重音}
+    \section{Letter}
+        \subsection{Accents}
+            \`o\phantom{50}\'o\phantom{50}\^o\phantom{50}\"o\newline
+            \~o\phantom{50}\=o\phantom{50}\.o\phantom{50}\u{o}\newline
+            \v{o}\phantom{50}\H{o}\phantom{50}\t{oo}\phantom{50}\r{o}\newline
+            \c{o}\phantom{50}\d{o}\phantom{50}\b{o}\newline
+            \AA\phantom{50}\aa\phantom{50}\AE\phantom{50}\ae\newline
+            \OE\phantom{50}\oe\phantom{50}\SS\phantom{50}\ss\newline
+            \IJ\phantom{50}\ij\phantom{50}\L\phantom{50}\l\newline
+            \O\phantom{50}\o\phantom{50}\i\phantom{50}\j
+            % Some example of accents on letters and some LaTeX letters. 
 
-        \subsection{其他字母}
+        \subsection{Other Letters}
+            \textgreek{abcde}\newline                   % would produce error in lualatex
+            %\textrussian{abcde}
+            % More details in https://ctan.math.utah.edu/ctan/tex-archive/macros/latex/contrib/babel-contrib/greek/usage.pdf
+            {\fontencoding{OT2}\selectfont ABCDE}       % would produce error in lualatex
+            % Input greek letter and cyrillic by using babel or fontenc macros. 
+            % More details in http://latex3.github.io/help/documentation/cyrguide.pdf
+            % NOTICE: Some letters need support all of the editor, input font and output font. 
+            % TODO: More details of using babel are in http://www.leliseron.org/annexes/LaTeX/babel.pdf
+            % FIXME: How to input Russian with babel? 
+            % REVIEW: 
+            % DEBUG:
+            % NOTE:
+
+        \subsection{Ligature}
+            differ find flight difficult ruffle\newline
+            dif{}fer f{}ind f\/light dif\/f\/icult ruffle
+            % To avoid ligature betweent tow letters, 
+            % There are tow ways taht you can do like above. 
+
+    \section{Punctuation}
+        \subsection{Common Punctuation}
+            , \quad . \quad ; \quad :\newline
+            ! \quad ? \quad ` \quad '\newline
+            ( \quad ) \quad [ \quad ]\newline
+            \quad - \quad / \quad * \quad @\newline
+            % DCB case punctuation that can input directly
+            % SBC case punctuation is similar to DCB, but only supported in Chinese environment. 
+            `` \quad '' \quad ``\,` '\,''\newline
+            % Use \, to split " and ' if they are close to each other. 
+            X-ray, 1--2, APP---Application\newline
+            % Different number of '-' will generate different puncatuation. 
+            % NOTICE: The habit of using them in English writing. 
+            Good: One, two, Three\dots\newline
+            Bad: One, two, Three...\newline
+            % The Command \dots will generate an ellipsis 
+                % with wider distance between dots which has a better looking
+                % than directly using three dots punctuation. 
+            % Command \dots is equal to \ldots. 
+            One, two, Three\dots.
+            % Another dots that used to be full stop could follow \dots. 
         
-        \subsection{连字}
+        \subsection{Special Punctuation}
+            % Some symbol or punctuation are occupied by LaTeX command
+                % which can not input directly 
+                % and need to input specific command instead. 
+                % We call the "\" escape character. 
+            \# \quad \$ \quad \% \quad \&\newline
+            \{ \quad \} \quad \_ \quad \textbackslash\newline
+            \~{} \quad \^{} \quad 
+            % TODO: Input |, <, >, +, =
 
-    \section{标点符号}
-        \subsection{普通标点}
+        \subsection{Other symbol}
+            \S \quad \dag \quad \ddag \quad \P\newline
+            \copyright \quad \textregistered \quad \texttrademark \quad \pounds \quad \textbullet\newline
+            % Above is the special symbol frequently using in an artical
+                % in latex default environment. 
+                % You can also type the symbol through UTF-8 coding. 
+            % NOTICE: Other symbol have dependence on different font. 
+            % Latex basic macro package textcomp has designed many symbol would appear in a text. 
+            \texteuro \quad \textperthousand\newline
+            % Package tipa provide symbol of phonetic, 
+                % dingbat, bbding, pifont provide other symbol of instruction and decoration. 
+            % TODO: Look up the package above how to use. 
+            % See "./symbols-letters.pdf" for more symbols. 
+            % NOTICE: Some package just provide symbol command, 
+                % some package provide alternative font to their symbol, 
+                % while some package change the holistic font set of the artical. 
+                % So please read related documentation of your package before using. 
+            \symbol{90} \quad \symbol{"5A} \quad \symbol{'132} \quad \symbol{`Z}
+            % Command \symbol allow you type the symbol's coding to repalace it. 
+            % The coding can be decimal, octonary, hexadecimal and the symbol its self. 
+                % The format example is given above. 
+                % NOTICE: If the symbol is special punctuation in 2.2, an escape character is also needed in front. 
+                % NOTICE: Chinese character is only allowed in xelatex environment.
 
-        \subsection{特殊标点}
+    \section{Blank}
+        A B  C   D    E\newline
+        % NOTICE: A series of space is equal to a click of space. 
+        \TeX ing and \TeX\ ing and \TeX{} ing and {\TeX} ing. \newline
+        % The space after a macro command will be ignored. 
+        % 4 ways to avoid the ignoring situation avove. 
+        Question~1\newline          % 1. Name and its sort
+        Donald~E Knuth\newline      % 2. Given name
+        Mr.~Knuth\newline           % 3. Acronym of name
+        function~$f(x)$\newline     % 4. Short equation after its name
+        1,~2, and 3\newline         % 5. Sequence
+        % These situation is not allowed to interrupt two words. 
+        % However, blank generating by click the space key could be interrupted
+            % if there is a line feed or something else. 
+        % Using ~ to link two words can prevent them to be interrupted. 
+        A sentence. Another Sentence. \newline              % 1
+        U.S.A. means United States of America. \newline     % 2
+        Roman number XII\@. Yes. \newline                   % 3
+        Thinker et al.\ made the double play.               % 4
+        % In English writing, the space must be used after ", . ; :". 
+            % TODO: See more details of rules in English writing in book--
+            % Robert Bringhurst's The Element of Typographic Style, 
+            % Anonymous' The Manual of Style. 
+        % In LaTeX, the width of the space at the end of a sentence following a dot
+            % is different from in the middle. 
+        % But sometimes, a dot could be used 
+            % in the middle of a sentence following a samll letter like situation 4. 
+            % or at the end of a sentence following a capital letter like situation 3. 
+        % Use command \@. in the situation 3 and use '\' before a sapce in the situation 4.  
+        % While you compiling Chinese documentation with xelatex, 
+            % a space while automatially add between Chinese and English
+            % ignoring how many space you have typed in these space. 
+        % Also there are some methods to prevent the space from generating by the compiler. 
+        % Please see Chinese documentation for more infomation. 
+        There is a phantom in the box. 
+        There is a \phantom{phantom} in the box. 
+        % The command \phantom will generating a blank box
+            % as wide as the paremeter. 
 
-        \subsection{特殊符号}
+    \section{Line Feed}
+        This is a line. 
 
-    \section{空格}
-        \mbox{条目}-a 和条目-b。
-        % 为了避免中文和西文之间默认的空格，可以将中文装入一个盒子中。
-        % 也可以使用 \CJKsetecglue{} 空白参数，表示中文与西文之间的内容为空。
-
-    \section{换行}
-        这是第一行\linebreak[4]
-        另一行\linebreak
-        另一行\linebreak[2]
-        另一行\linebreak[0]
-        最后一行
-
-    \section{字体}
-        \subsection{预设字体}
-            % 中文没有西文那么多的变体，许多字体都是独立的。
-            % 一般只使用不同的字体族区分中文。
-            % 在 xeCJK 宏包下，中文和西文字体的选择命令是分开的。
-            {\CJKfamily{zhhei}这是黑体}\newline
-            {\CJKfamily{zhkai}这是楷体}\newline
-            % 不同的系统下，字体族可能会有差异。此外还有 zhsong, zhfs。
-            % xeCJK 宏包还预定义了一些字体命令。
-            {\songti 宋体} \quad {\heiti 黑体}\newline
-            {\fangsong 仿宋} \quad {\kaishu 楷书}\newline
-            % ctex 宏包还定义了一套组合的字体，使文章中实现像西文一样的粗体、意大利体等效果。
-            % 比如 Windows 系统下，rm 是宋体，bf 是黑体，it 是楷体，sf 是幼圆，tt 是仿宋。
-            {\CJKfamily{rm}这是宋体}\newline
-            \textbf{粗体} \quad \textit{斜体}       % 等同于 \bfseries, \itshape 命令。
-            % 使用其他字体时，则可能出现由于找不到字体的情况出错。
-            % NOTE: 这部分字体设置可在下面文件中更改
-            % ".../texlive/2021/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-windows.def"
-            % 在文件中，ctex 宏包通过使用下面的命令为某个字体的变体指定代替的其他字体
-            % \setCJKmainfont[BoldFont=SimHei, ItalicFont=KaiTi, BoldItalicFont=LiSu]{SimSun}
-            % 和西文中 \setmainfont 类似。
-            % 使用 \renewcommand\CJKrmdefault{font} 可以将全文使用的 rm 字体族替换为你制定的字体族。
-            % 使用 \renewcommand\CJKfamilydefault{\CJKsfdefault}，可以将全文默认的字体族修改为 sf 字体族。
-
-        \subsection{更多字体}
-            % 使用下面的命令修改预设字体
-            % \setCJKmianfont[optiions]{font1}         % rm
-            % \setCJKsansfont[optiions]{font2}         % sf
-            % \setCJKmonofont[optiions]{font3}         % tt
-            %\CJKfamily{tt}{印刷字体}\newline
-            % 5.1 最后给了一个 option 的实例。
-            % xeCJK 宏包还给出了一个自定义字体族的命令。
-            %\setCJKfamilyfont{defined_name}[options]{font4}
-            % 使用这个命令后，就可以使用你定义的字体族名称调用字体了。
-            %\CJKfamily{pen}{钢笔手写体}
+        This is another line. \newline
+        % In latex, just one line feed would be ignored, 
+            % this peculiarity is set to help the code more legible. 
+        % To begin a new paragraph, you need two line feed
+            % with a blank line in the middle. 
+        This is a line. \newline
+        This is another line. 
+        % Another way to begin a new line is to use command
+            % \\ or \newline at the end of a line. 
+        % Command \linebreak will distribute the former from left to right margin in Chinese environment. 
+        % NOTICE: Both \\ and \linebreak have hbox problem in common environment, 
+            % they are usually used in poetry, table and math. 
+        % Command \\ have a parameter which set the vertical distance between two lines. 
+            % If the line after \\ begin with "[", you need using {} after \\ with blank content. 
+        % And \linebreak have a command which set the degree of line feed and be defaultly set to 4, 
+        % ranging from 0 the lowest to 4 the highest being contrary to the command \nolinebreak. 
         
-    \section{强调}
-        % --------------- 使用 xelatex 编译 ----------------
-        %\CJKunderdot{下加点}\newline
-        %\CJKunderline{下划线}\newline
-        %\CJKunderdblline{双下划线}\newline
-        %\CJKunderwave{波浪线}\newline
-        %\CJKsout{横删除线}\newline
-        %\CJKxout{斜删除线}\newline
-        \begin{CJKfilltwosides}{5cm}
-            分散对齐。
-        \end{CJKfilltwosides}\newline
-        \emph{强调}
-        % "https://www.ctan.org/tex-archive/languages/chinese/CJK/cjk-4.8.4/texinput/#CJKfntef.sty"
-        % --------------- 使用 xelatex 编译 ----------------
-        % 使用 CJKfntef 宏包后，原来的命令 \emph 如果被改为下划线格式，同样可以使用 \normalem 改回原来的定义。
-        % 在 ctex 宏包或文档类中，也可以使用 fntef 选项调用 CJKfntef
+    \section{Font}
+        \subsection{Preinstall Font}
+            % font family
+            \textrm{Roman font}\newline
+            {\rmfamily Roman font}\newline              % the same as \textrm{}
+            {\sffamily Sanserif font}\newline           % the same as \textsf{}
+            {\ttfamily Typewriter font}\newline         % the same as \texttt{}
+            % font shape
+            {\upshape Upright shape}\newline            % the same as \textup{}
+            {\itshape Italic shape}\newline             % the same as \textit{}
+            {\slshape Slanted shape}\newline            % the same as \textsl{}
+            {\scshape Small capital shape}\newline      % the same as \textsc{}
+            % font series
+            {\mdseries Medium series}\newline           % the same as \textmd{}
+            {\bfseries Bold extended series}\newline    % the same as \textbf{}
+            % The font can be divided into three orthometric dimensions--family, shape and series. 
+            % There are two ways to change the font which are font declaration as the examples above. 
+                % and box command with parameter as the explaination in annotation. 
+            % In latex, available options are given above. 
+                % Since some font may not have so all shape or series, 
+                % these two command may have different effect from usual font. 
+            % Chinese fonts usaully have no other variant, so 
+                % different type of fonts are used to replace the variant in a font family. 
+                % See more details in Chinese Documentation. 
+            % mixed font
+            {\rmfamily\slshape\mdseries Mixed font I}\newline
+            \textsf\textit\textbf{Mixed font II}\newline    % NOTICE: The Italic shape did not work. 
+                                                            % This is because every situation can be regarded as one kind of font. 
+                                                            % And in this coordinates, the font is lack (and may have been replaced by other font). 
+            % The font's three dimensions can be mixed optionally. 
+            % The last slanted letter at the end of a line will cross the right margin. 
+                % Use the methods underneath to revise it. 
+            {\itshape M}M \quad \textit{M}M \quad {\itshape M\/}M\newline
+            \textit{M\nocorr}M\newline         % Forbid the revise. 
+            % Also, bold letters may be too close to the puntuation following it. 
+                % Underneath are methods to solve it. 
+            `{\bfseries leaf}' \quad `{\bfseries leaf\/}' \quad `\textbf{leaf}'\newline
+            % EXTENSION: Command \newcommand could be used to reset \nocorrlist{}. 
+                % \nocorrlist{} is defualt set with "," and "." in it 
+                % which is the same as \newcommand\nocorrlist{,.}
+            % If you want to change back to default font in a complex font environment, 
+                % do like underneath
+                \newline
+            {\sffamily \textbf{There is a \textit{complex example, 
+            but \textnormal{a normal one} is in} it}}\newline
+                % {\normalfont ...} is equal to it.  
+                % And the font you will get using this command is \rmfamily\mdseries\upshape. 
+            % EXTENSION: More details about English font can be found in "./hartke.pdf" and https://tug.org/FontCatalogue/
+            % Like our dividing font into three dimensions, latex publish its own methods to locate a font, 
+                % NFSS(New Font Selection Scheme) which also dividing font into many orthometric properties, 
+                % such as encoding, family, series, shape, size and so on. 
+            {\fontencoding{OT1}\fontfamily{pzc}\fontseries{m}\fontshape{n}\fontsize{14}{17}
+            \selectfont PostScrip New Century Schoolbook}\newline
+            {\usefont{T1}{pbk}{db}{n} PostScrip Bookman Demibold Normal. }
+                % The first parameter in fontsize is letter's size, and the second one is line spacing. 
+            % We can also replace the rmfamily font by command \renewcommand\rmdefault{cmfib}, 
+            % so that we will use fontfamily cmfib when we use \rmfamily or \textrm{}. 
+            % Also we can change the artical's using default font family from rm into sf, 
+            % using command \renewcommand\familydefault{\sfdefault}. 
 
-    \section{字号}
-        % 在 LaTeX 中，字号有 0~8 和 -0~-6 这几类，分别代表 初号、一号到八号和小初号、小一号到小六号。
-        {\zihao{0} 初号}\newline
-        {\zihao{-0} 小初号}\newline
-        {\zihao{1} 一号}\newline
-        {\zihao{-1} 小一号}\newline
-        {\zihao{4} 四号}\newline
-        {\zihao{8} 八号}\newline
-        % ctex 的文档类提供了两个默认字体大小的选项，c5size 和 cs4size，
+        \subsection{More Font}
+            % In 5.1, those command only can use the fonts that are preinstalled in System or latex. 
+            % Sometimes, we lack some fonts of them or want to use other fonts. 
+            % Some packages can replace the font configuration, such as times, mathptms, txfonts. 
+            % NOTICE: Different font may need different encoding, 
+                % For example, if you want to use font package ccfonts and euler 
+                % for better harmony of text and math part, you need to use T1 encoding. 
+                % Use command NOTE: \usepackage[encoding1, encoding2, ... encodingn]{fontenc}
+                    % The parameters are the encoding ways of the article, with the final one the default one. 
+            % The package fontspec contains commands that can use other font to replace the default font in latex. 
+                % \usepackage{fontspec}
+                % \setmainfont{font1}       % change the \rmfamily
+                % \setsansfont{font2}       % change the \sffamily
+                % \setmonofont{font3}       % change the \ttfamily
+            % See code above in preamble. 
+            % Fontspec also can define new font famlily if needed. 
+                % \newfontfamily\family_name{font}
+            %{\inkfamily Hello!}
+
+        \subsection{Math Font}
+
+            % Generally LaTeX using italic font in math parts of the article. 
+            % And command /mathrm{}, /mathsf{}, /mathtt{}, and so on to change the math parts font, 
+            % which is configured defualtly as the same with text. 
+            % Some math font package can change the math parts font, but whether it is useful to above command 
+            % depanding the package whether loads "no-math" module in fontspec. 
+            % If it doesn't like package ccfonts, and you want to change the configuration of these command like \mathrm{}, 
+            % NOTE: just manually load the module by command \usepackage[no-math]{fontspec}
+            \begin{equation}
+                AB^2 = BC^2 + AC^2. 
+            \end{equation}
+            \begin{equation}
+                \mathrm{AB^2 = BC^2 + AC^2. }
+            \end{equation}
+
+            % TODO: Situation may go complex when we use both English which not support Unicode and Chinese in one article, 
+            % See the book in Page 74 for some help. 
+
+        \subsection{Sympol Font}
+            % LaTeX only use one encoding in one time. 
+            % NOTICE: If you need different encodings, you need change it manually. 
+            % There is a example, in Greek and fontspec package. 
+                % XeLaTeX use Unicode encoding, while the command \textipa in tipa package which outputs IPA works in ASCII. 
+                % So when you compile command \textipa{}, the compiler will change the IPA's encoding from ASCII into Unicode, 
+                % which can not output by default font Latin Modern because it less these endoing. 
+                % NOTE: The situation in this file, that babel package conflict with xelatex are very similar. 
+                % To solve this problem, you just need use font containing IPA in Unicode, 
+                % such as Linux Libertine O, Times New Roman and so on, for example, NOTE: \setmainfont{CMU Serif}. 
+                % TODO: There is another way is use \newcommand to define a new command 
+                % referencing the \textipa command's defination with encoding changing options. 
+                % Since I am not still understand the \newcommand, please see more details in book Page 75. 
+            % There is a useful package which can output the symbol table in specific font with its NFSS. 
+            {\xfonttable{OT1}{lmr}{m}{n}}
+            
+    \section{Emphasize}
+        % In LaTeX, basical command to emphasize is actually to use italic in upright or on the contrary. 
+        This word is \emph{emphsized} in the sentence. \newline
+        \textit{This word is \emph{emphsized} in the sentence.}\newline 
+        % So you can use \newcommand to define your own style command to emphasize your text. 
+        This word is \emph{emphsized} differently in the sentence. \newline
+        % Another way to emphsize is making underline. 
+        This is an \underline{Emphasized} \underline{word}. \newline
+        % Howerver, the underline command does not support wraping around text, and not align under the text. 
+        % Package ulem provide a better command. 
+        This is an \uline{Emphasized} \uline{word}. \newline
+        This is a very \uline{very very very very very very very very very very 
+        very very very veryvery very very very} long sentence. 
+        % NOTICE: The ulem package will change the original \emph command into underline style. 
+        % To avoid this, we can use normalem option when we use ulem package, or just use \normalem to replace it. 
+        % Also, the ulem package support the colorful highlight. 
+        % % TODO: It's a good idea to see more usage of ulem package in "../ulem.pdf". 
+        % CJK package provide its own command to emphaisze which is more friendly in Chinese Situation. 
+
+    \section{Font Size}
+        % In LaTeX, there are 11 kinds of units to represent the length. 
+        % There are pt(point), pc(pica), in(inch), bp(big point), cm(centimeter), mm(millimeter), dd(didot point), 
+            % sp(scaled point), em(equal to the font size using and \quad command's length), ex(x-height, defined by font itsself)
+        % At past, font size was regarded as one of the coordinates in NFSS. 
+            % But now, fonts are usually vectors, which can change its size at will. 
+            % Font size is described by length units in LaTeX. 
+        % Command \fontsize{}{} is used to select font size specificly. 
+        % The first parameter defines the font size and the second parameter defines the line space which would be explained in section 8. 
+        {
+            \fontsize{24.88pt}{36pt} \selectfont 
+            A very huge\newline
+            line
+        }\newline
+        % In LaTeX, there are some simple declaration command provided to change the font size easily. 
+        The text can be {\Large large}. \newline
+        % They, sorting from the smallest to the largest, are
+            % \tiny, \scriptsize, \footnotesize, \small, \normalsize, \large, \Large, \LARGE, \huge, \Huge
+        {\tiny tiny}\newline
+        {\scriptsize scriptsize}\newline
+        {\footnotesize footnotesize}\newline
+        {\small small}\newline
+        \ldots\newline
+        {\LARGE large}\newline
+        {\huge huge}\newline
+        {\Huge Huge}\newline
+        % In different document class options, the \normalsize could be configured differently. 
+        % Standard class have 10pt, 11pt, 12pt normalsize to option with command above defineing different size of font. 
+        % And command above will change the line space, in order to make the composing more beautiful.
+        % NOTICE: Command \quad is as wide as the font size's length, in other words, as wide as the letter's height. 
+         
+        % In Chinese environment, it is more intuitively to use \zihao to represent \fontsize instead. 
+            % And zihao is a special font size units for chinese characters. See more details in Chinese documentation. 
+
+    \section{Line Space}
+        % TODO: line space and font size graph
+        % The adjacent two lines have their base line, and the distance between two base lines is line space. 
+        % Defaultly, line space in paragraph is 1.2 times as long as the font size. 
+        % The basical command can be used like underneath, the parameters defines the times to default line space. 
+        {
+            \linespread{1.5} \selectfont
+            A different\newline
+            line space
+        }\newline
+        -----------\newline
+        % In Chinese environment, the default line space is 1.3 times as long as the font size. 
+        % Package setspace provides some command to define space line easily. 
+        % Among them, the command \setstretch{} which is used frequently is equal to \linespread{}\selectfont
+        {\setstretch{1.5} A different\newline
+        line space}\newline
+        -----------\newline
+            % NOTICE: It should be noticed that other command like \singlespacing, \onehalfspacing 
+            % reprensent the line space times to fontsize, instead of the default space line. 
+        {\onehalfspacing A different\newline
+        line space}\newline
+        -----------\newline
+        {\doublespacing A different\newline
+        line space}\newline
+        -----------\newline
+            % These commands can also used as environment, for example
+        \begin{spacing}{1.5}
+            A different\newline
+            line space
+        \end{spacing}
+        -----------\newline
+        \begin{doublespace}
+            A different\newline
+            line space
+        \end{doublespace}
+        % In LaTeX, the line space is controlled by the value of \baselineskip. 
+        % Actually, \fontsize and \linespread indirectly controlled the \baselineskip. 
+        % lineskiplimit is a limit value set by us whose function is that when two adjancent lines' line space
+            % smaller than it, the line space will use the value \lineskip, also set by us, instead. 
+            % The example is placed in introduction part. 
+            % This function can be very useful when math fraction appears in your article. 
+
+    \section{Horizontal Space}
+        % Line Space is the vertical distance between line and line, 
+        % while horizontal space is between letter and letter in the same line. 
+        % Some simple command can be used in text. 
+        % Underneath commands are not allowed to wrap around. 
+        A\thinspace B or A\, B\newline
+        C\negthinspace D\newline
+        E\enspace F\newline
+        G\nobreakspace H\newline or G~H
+        % Underneath commands are allowed to wrap around. 
+        A\quad B\newline
+        C\qquad D\newline
+        E\enskip F\newline
+        G\ H\newline
+        % Command \hspace{} can adjust the horizontal distance precisely through the length parameter. 
+            % \hspace{} is allowed to wrap around. 
+        Space\hspace{1cm}1\, cm\newline
+        % However, \hspace{} will ignore the distance when its left has no text. 
+            % In this situation, we can use \hspace*{} instead. 
+        \hspace{1cm} 1\, cm\newline
+        \hspace*{1cm} 1\, cm\newline
+        % \hspace also can generate a length ranging in a designated scale which commonly called glue or rubber length. 
+            % FIXME: I do not understand how it works. 
+        \newcommand\test{longggggggggg\hspace{2em plus 1em minus 0.25em}}
+        \test\test\test\test\test\test\test\test\newline
+        % \fill is a special rubber length parameter in \hspace, which ranging from zero to infinite. 
+            % The command \hspace{\fill} can be written \hfill as its abbreviation. 
+        left\hspace{\fill}middle\hfill right\newline
+        % Parameter \stretch{} can generate a rubber length which elastic force is parameter times as strong as the \hfill. 
+        left\hspace{\stretch{2}} middle\hspace{\stretch{3}} right\newline
+        % Commands \dotfill and \hrulefill is similar to \hfill in function, 
+        % whose differences are that the former uses dot and the latter uses underline replacing the blank. 
+        left\dotfill middle\hrulefill right\newline
+        % Command \parindent can control the indent at the far left of one line. 
+            % It usually used in environment and need to coordinate with \setlength. See the example underneath
+        {
+            \setlength\parindent{24em}
+            Paragraph indent can be very wide in \LaTeX . 
+        }\par
+        % FIXME: Why this command above did not work?
+        {
+            Para\par
+            \addtolength\parindent{2em}Para\par
+            \addtolength\parindent{2em}Para
+        }\par
+        % There is a useful technique that is to set a definition of a designated length, 
+            % so that you can just change your definition to change the global length. 
+            % The mylen is defined in Introduction. 
+        {
+            Para\par
+            \addtolength\parindent{\mylen}Para\par
+            \addtolength\parindent{\mylen}Para
+        }
+
+    \section{Box}
+        % TODO: box graphic
+        % REVIEW:  Box is the fundamental unit LaTeX is dealing with. 
+        % Everything, containing a letter, a line, a paragraph, a graph, a table, a page and so on, 
+            % can be regarded as a box. 
+        % On horizon, the letter boxes constitude a line box, and on vertical, the line boxes contitude a page box. 
+        % Command \mbox{} is the most simple command which will generate a box with text put into. 
+            % The text in it is the same as outer text, but the blank before or after it could be affected in some special situation, 
+            % and most commonly, it do not allowed wrap around that is the function every box does. 
+        \mbox{Text in box cannot be broken. }\par
+        % Command \makebox[][]{text} has three parameters. 
+            % The first one represents the width, 
+            % The second one represents the alignment, with c-center, l-left, r-right, s-stretch optionally. 
+        This is a\,\makebox[1em]{text}\,in box. \par
+        \makebox[5cm][s]{Some stretched text}\par
+        % The \makebox can even generate a 0-width box to make overlap effect. 
+        \makebox[0pt][l]{word}text\par
+        % EXTENSION: The Command \llap and \rlap is professionally used to make overlap effect, 
+            % the former one left alignment and the latter one right alignment. 
+        Some text\llap{word}\par
+        \rlap{word}Some text\par
+        % Command \fbox and \framebox can generate box with framwork. Their grammer is similar to \mbox and \makebox. 
+        \fbox{framed}\par
+        \framebox[3cm][s]{A framed box}\par
+        % The space between framework and text is configured by \fboxsep which is defaultly 3pt. 
+        % And the thickness of the framework is configured by \fboxrule which is defaultly 0.4pt. 
+        {
+            \setlength\fboxsep{0pt}
+            \setlength\fboxrule{0.1pt}
+            \fbox{tight}
+        }\par
+        {
+            \setlength\fboxsep{1em}
+            \setlength\fboxrule{1pt}
+            \fbox{loose}
+        }\par
+        % Command \newsavebox can define a box environment so that you can use it repeatedly. 
+            % The mybox is defined in Introduction. 
+        \usebox\mybox \fbox{\usebox\mybox}\par
+        % Saving box is usually used to saving some complex content. 
+        % Command \settowidth<length_variable>, \settoheight<length>, \settodepth<length>{text} 
+        % can respectively get the text parameter's width, height, and depth to the text. 
+            % And command \wd<box_variable>, \ht<box>, \dp<box> can respectively get the box parameter's width, height, and depth to the text.
+        \framebox[\wd\mybox]{text}\par
+        % Some special parameter represent the text natural properties. 
+            % \width, \height, \depth, \totalheight(the sum of height and depth)
+        \framebox[2\width]{frame}
+
 
 \end{document}
-
