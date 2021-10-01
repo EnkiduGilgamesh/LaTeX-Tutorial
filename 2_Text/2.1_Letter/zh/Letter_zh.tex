@@ -47,8 +47,6 @@
 
     \section{空格}
         \mbox{条目}-a 和条目-b。
-        % 为了避免中文和西文之间默认的空格，可以将中文装入一个盒子中。
-        % 也可以使用 \CJKsetecglue{} 空白参数，表示中文与西文之间的内容为空。
 
     \section{换行}
         这是第一行\linebreak[4]
@@ -59,27 +57,14 @@
 
     \section{字体}
         \subsection{预设字体}
-            % 中文没有西文那么多的变体，许多字体都是独立的。
-            % 一般只使用不同的字体族区分中文。
-            % 在 xeCJK 宏包下，中文和西文字体的选择命令是分开的。
             {\CJKfamily{zhhei}这是黑体}\newline
-            {\CJKfamily{zhkai}这是楷体}\newline
-            % 不同的系统下，字体族可能会有差异。此外还有 zhsong, zhfs。
-            % xeCJK 宏包还预定义了一些字体命令。
+            {\CJKfamily{zhkai}这是楷体}
+            
             {\songti 宋体} \quad {\heiti 黑体}\newline
-            {\fangsong 仿宋} \quad {\kaishu 楷书}\newline
-            % ctex 宏包还定义了一套组合的字体，使文章中实现像西文一样的粗体、意大利体等效果。
-            % 比如 Windows 系统下，rm 是宋体，bf 是黑体，it 是楷体，sf 是幼圆，tt 是仿宋。
+            {\fangsong 仿宋} \quad {\kaishu 楷书}
+            
             {\CJKfamily{rm}这是宋体}\newline
             \textbf{粗体} \quad \textit{斜体}       % 等同于 \bfseries, \itshape 命令。
-            % 使用其他字体时，则可能出现由于找不到字体的情况出错。
-            % NOTE: 这部分字体设置可在下面文件中更改
-            % ".../texlive/2021/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-windows.def"
-            % 在文件中，ctex 宏包通过使用下面的命令为某个字体的变体指定代替的其他字体
-            % \setCJKmainfont[BoldFont=SimHei, ItalicFont=KaiTi, BoldItalicFont=LiSu]{SimSun}
-            % 和西文中 \setmainfont 类似。
-            % 使用 \renewcommand\CJKrmdefault{font} 可以将全文使用的 rm 字体族替换为你制定的字体族。
-            % 使用 \renewcommand\CJKfamilydefault{\CJKsfdefault}，可以将全文默认的字体族修改为 sf 字体族。
 
         \subsection{更多字体}
             % 使用下面的命令修改预设字体
@@ -88,9 +73,6 @@
             % \setCJKmonofont[optiions]{font3}         % tt
             %\CJKfamily{tt}{印刷字体}\newline
             % 5.1 最后给了一个 option 的实例。
-            % xeCJK 宏包还给出了一个自定义字体族的命令。
-            %\setCJKfamilyfont{defined_name}[options]{font4}
-            % 使用这个命令后，就可以使用你定义的字体族名称调用字体了。
             %\CJKfamily{pen}{钢笔手写体}
         
     \section{强调}
