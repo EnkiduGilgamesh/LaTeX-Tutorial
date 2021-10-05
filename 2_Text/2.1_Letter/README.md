@@ -387,7 +387,7 @@ NOTE: $\LaTeX$ only use one encoding in one time. That may make mistakes when yo
 
 If you need different encodings, you need change it manually.
 
-There is an example: in Greek and fontspec package. $\XeLaTeX$ uses Unicode encoding, while the command `\textipa` in **tipa** package which outputs IPA works in ASCII.
+There is an example: in Greek and fontspec package. $XeLaTeX$ uses Unicode encoding, while the command `\textipa` in **tipa** package which outputs IPA works in ASCII.
 So when you compile command `\textipa{}`, the compiler will change the IPA's encoding from ASCII into Unicode, which can not output by default font Latin Modern because it lack these endoing.
 
 To solve this problem, you just need use font containing IPA in Unicode, such as Linux Libertine O, Times New Roman and so on. for example,
@@ -502,7 +502,7 @@ In Chinese environment, package **ctex** provides another kind of command, which
 
 Every line has its own base line, and the distance between two adjacent base lines is the line space.
 
-![2021-10-01-Line_Space](https://i.loli.net/2021/10/01/ybIRsgBFfL3JCXi.jpg)
+![2021-10-05-Line_Space](https://raw.githubusercontent.com/EnkiduGilgamesh/PicBed/main/Image_LaTeX/2021-10-05-Line_Space.jpg)
 
 Defaultly, line space in paragraph is 1.2 times as long as the **font size**.
 
@@ -655,7 +655,7 @@ On horizon, the letter boxes constitude a line box, and on vertical, the line bo
 
 A text box is like this:
 
-![2021-10-01-Text_Box](https://i.loli.net/2021/10/01/imURaMVOJpzkSYb.jpg)
+![2021-10-05-Text_Box](https://raw.githubusercontent.com/EnkiduGilgamesh/PicBed/main/Image_LaTeX/2021-10-05-Text_Box.jpg)
 
 Command `\mbox{}` is the most simple command which will generate a box with text put into. The text in it is the same as outer text, but the blank before or after it could be affected in some special situation, and most commonly, it do not allowed wrap around which is the function every box does.
 
