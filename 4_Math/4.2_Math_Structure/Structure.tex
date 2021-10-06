@@ -1,0 +1,206 @@
+%-*- coding: UTF-8 -*-
+%-*- Structure.tex -*-
+%-*- Math Structure
+
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{tensor}
+\usepackage{xfrac}
+
+\newcommand\stiring[2]{\genfrac{[}{]}{0pt}{}{#1}{#2}}
+\newcommand\dstiring[2]{\genfrac{[}{]}{0pt}{0}{#1}{#2}}
+\newcommand\tstiring[2]{\genfrac{[}{]}{0pt}{1}{#1}{#2}}
+
+\DeclareMathOperator\dif{d\!}
+
+\newcommand\degree{^\circ}
+
+\title{Math Structure}
+\author{Wenren Muyan}
+\date{\today}
+
+\begin{document}
+    \maketitle
+    \tableofcontents
+
+    \section{Superscript and Subscript}
+        $A_{ij}=2^{i+j}$
+
+        $A_i^k = B^k_i$\par
+        $A_{i_k} = B^{k_i}$\par
+        $3^{3^{3^{\cdot^{\cdot^{\cdot^3}}}}}$
+
+        $a = a'$, $b_0' = b_0''$\par
+        ${c'}^2 = (c')^2$
+
+        $A=90^\circ$\par
+        $A=90\degree$
+
+        \[
+            \max_n f(n) = \sum_{i=0}^n A_i
+        \]
+        \[
+            \int_0^1 f(t) \dif t = 
+            \iint_D g(x,y) \dif x \dif y
+        \]
+
+        \[
+            \iiint\limits_D \mathrm{d}f =
+            \max\nolimits_D g   
+        \]
+
+        $\sum\limits_{i=0}^n A_i$ is worse than
+        $\sum_i^n A_i$.
+
+        $\prescript{n}{m}{H}_i^j < L$ is better than 
+        ${}^n_mH_i^j < L$
+
+        \[
+            \sideset{_a^b}{_c^d} \sum_{i=0}^n A_i = 
+            \sideset{}{'} \prod_k f_i
+        \]
+
+        $\overset{*}{\underset{\dag}{X}}$
+
+        $M\indices{^a_b^{cd}_e}$ \qquad
+        $\tensor[^a_b^c_d]{M}{^a_b^c_d}$
+
+        $A_m{}^n$ is worse than $A_m^{\phantom{m}n}$
+
+        \section{Line and Brace}
+
+        $\overline{a+b} =
+         \overline a + \overline b$\\
+        $\underline a = (a_0,a_1,a_2,\dots)$
+
+        $\overline{\underline{\underline a}} +
+        \overline{b}^2 - c^{\underline n}$
+
+        $\overleftarrow{a+b}$\\
+        $\underrightarrow{a+b}$\\
+        $\overleftrightarrow{a+b}$
+
+        $\vec x = \overrightarrow{AB}$
+
+        $\overbrace{a+b+c} = \underbrace{1+2+3}$
+
+        \[
+            ( \overbrace{a_0,a_1,\dots,a_n}^{totally n elements} ) = 
+            ( \underbrace{0,0,\dots,0}_{n},1 )
+        \]
+
+        \[
+            \underbracket{\overbracket{1+2}+3}_3    
+        \]
+
+    \section{Fraction}
+        Equation: $\frac 13 + \frac 2x = \frac{2+x}{2x}$
+
+        \[
+            \tfrac 12 f(x) =
+            \frac{1}{dfrac 1a + dfrac 1b +c}
+        \]
+
+        \[
+            \cfrac{1}{1+\cfrac{2}{1+\cfrac{3}{1+x}}} = 
+            \cfrac[r]{1}{1+\cfrac[c]{2}{1+\cfrac[l]{3}{1+x}}}    
+        \]
+
+        $\sfrac 1a + b$ and $1/a + b$
+
+        \[
+            (a+b)^2 = \binom 20 a^2 + \binom 21 ab + \binom 22 b^2
+        \]
+
+        \[
+            \genfrac{[}{]}{0pt}{}{n}{1} = (n-1)!, \qquad n > 0 
+        \]
+
+        \[
+            \stiring{n}{1} = (n-1)!, \qquad n > 0 
+        \]
+
+    \section{Square Root}
+        $\sqrt 4 = \sqrt[3]{8} =2$
+
+        \[
+            \sqrt[n]{\frac{x^2 + \sqrt 2}{x + y}}    
+        \]
+
+        \[
+            \sqrt[\uproot{16}\leftroot{-2}n]{\frac{x^2 + \sqrt 2}{x + y}}    
+        \]
+
+        $\sqrt{\frac 12} < \sqrt{\vphantom{\frac 12} 2}$\\
+        % or
+        $\sqrt b \sqrt y$ \qquad 
+        $\sqrt{\mathstrut b} \sqrt{\mathstrut y}$
+
+    \section{Matrix}
+        \[
+            A = \begin{pmatrix}             % b v p B V none
+            a_{11} & a_{12} & a_{13} \\
+            0 & a_{22} & a_{23} \\
+            0 & 0 & a_{33}
+            \end{pmatrix}    
+        \]
+
+        \[
+            A = \begin{bmatrix} 
+            a_{11} & \dots & a_{1n} \\
+            & \ddots & \vdots \\
+            0 &  & a_{nn}
+            \end{bmatrix}    
+        \]
+
+        \[
+            \begin{bmatrix}
+            1 & \frac 12 & \dots & \frac 1n \\
+            \hdotsfor{4} \\
+            m & \frac m2 & \dots & \frac mn
+            \end{bmatrix}
+        \]
+
+        \[
+            \begin{bmatrix}
+            \begin{matrix} 1 & 0 \\ 
+                        0 & 1 \end{matrix}
+            & \text{\Large 0} \\
+            \text{Large 0} & \begin{matrix}
+                            1 & 0 \\
+                            0 & 1 \end{matrix}
+            \end{bmatrix}
+        \]
+
+        The matrix \begin{math}
+        \left( \begin{smallmatrix}
+        x & -y \\
+        y & x \end{smallmatrix} \right) \end{math}
+
+        \[
+            \sum_{\substack{0<i<n \\ 0<j<i}} A_{ij}    
+        \]
+
+        \[
+            \sum_{\begin{subarray}{l}   % l,r,c
+            i<10 \\ j<100 \\ k<1000
+            \end{subarray}} X(i,j,k)    
+        \]
+
+        \[
+            \begin{pmatrix*}[r]
+            10 & -10 \\ -20 & 3
+            \end{pmatrix*}    
+        \]
+
+        \[
+            \bordermatrix{
+                & 1 & 2 & 3 \cr
+            1 & A & B & C \cr
+            2 & D & E & F \cr
+            }    
+        \]
+                    
+\end{document}    

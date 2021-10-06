@@ -1,0 +1,50 @@
+%-*- coding: UTF-8 -*-
+%-*- Introduction.tex -*-
+%-*- Math Environment Introduction
+
+\documentclass{article}
+
+\usepackage{ntheorem}
+\usepackage{amsmath}
+
+%\renewcommand\qedsymbol{\ensuremath{\Box}}
+
+% FIXME: Command \Box not provided in base Latex2e
+
+\title{Math Environment Introduction}
+\author{Wenren Muyan}
+\date{\today}
+
+\begin{document}
+    \maketitle
+    \tableofcontents
+
+    \section{Introduction}
+        The Commutative law is $a+b=b+a$, for example $1+2=2+1$. \par
+        % or
+        \(a+b=b+a\)\par
+        \begin{math}a+b=b+a\end{math}
+
+        %\qedsymbol and $\qedsymbol$
+
+        The Commutative law is
+        $$
+            a*b=b*a
+        $$
+        % or
+        The Associative law is:
+        \[
+            (a*b)*c=a*(b*c)
+        \]
+        % or
+        The Distributive law is:
+        \begin{displaymath}
+            a*(b+c)=a*b+a*c
+        \end{displaymath}
+
+        \begin{equation}
+            a+b=b+a \label{eq:commutative}
+        \end{equation}
+
+    \section{II}
+\end{document}

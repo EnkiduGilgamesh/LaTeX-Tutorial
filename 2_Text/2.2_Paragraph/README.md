@@ -280,11 +280,11 @@ NOTE: Enumerate environment can be nested in four levels.
 
 ### 2.2.7.2 Enumerate
 
-The number of the enumerate is controlled by a group of counters.
+The number of the enumerate is controlled by a group of counters:
 
-* Whenever enter a new enumerate environment, the counter will be reset to 0.
-* Whenever meet a `\item` without parameter, the counter plus 1.
-* There are four default counter in LaTeX, whose name are enumi, enumii, enumiii, enumiv.
++ Whenever enter a new enumerate environment, the counter will be reset to 0
++ Whenever meet a `\item` without parameter, the counter plus 1
++ There are four default counter in LaTeX, whose name are enumi, enumii, enumiii, enumiv
 
 Command `\the` or `label` with conuter_name behind will outout the value of the counter and for the latter one, a dot will follow the number with lable command. Actually, the enumerate environment use it to output the number.
 
@@ -580,7 +580,7 @@ The tabbing environment is defined to help to use TAB for composing. It is used 
 
 The `\kill` controls if the first row displays. Other commands used in tabbing environment show in the table blow:
 
-| | | 
+| | |
 | --- | --- |
 | \= | set a TAB |
 | \' | the text front and latter will be centered around the current TAB |
@@ -659,11 +659,22 @@ There is a \parbox{4em}{paragraph box}.
 
 Command `\parbox` and minipage has three optional parameters. And the total command is `\parbox[base_line_position][height][text_position]{width}{text}`
 
-The *base_line_position* is the box position and it can use **c-center, t-top, b-buttom**, which is defaulty c. The *text_position* is the text in the box's position, and it can use **c, t, b**, and **s-distributed**. 
+The *base_line_position* is the box position and it can use **c-center, t-top, b-buttom**, which is defaulty c. The *text_position* is the text in the box's position, and it can use **c, t, b**, and **s-distributed**.
 
 ```latex
 \begin{minipage}[c][2.5cm][t]{5em}
     The grass grows  
+\end{minipage}
+\begin{minipage}[c][2.5cm][c]{8em}
+    on the edge of a lonely stream,
+\end{minipage}
+\begin{minipage}[c][2.5cm][b]{15em}
+    and there is a spring tide with the sound of deep trees. 
+\end{minipage}
+\begin{minipage}[c][2.5cm][s]{14em}
+    \setlength\parskip{0pt plus 1pt}
+    When showers fall at dusk, the river overflows; \par
+    A lonely boat athwart the ferry floats at ease.
 \end{minipage}
 ```
 
@@ -720,7 +731,7 @@ Strut means a placeholder, whose width or height is 0. It is similar to the `\ph
 
 ## 2.2.12.6 Raise Box
 
-Raise box is used to generate a box with lift distance, and we can put our text in it. That is how the `\TeX` symbol appears. 
+Raise box is used to generate a box with lift distance, and we can put our text in it. That is how the `\TeX` symbol appears.
 
 Its whole command is `\raisebox{lift_distance}{height}[depth]{text}`.
 
