@@ -2,7 +2,10 @@
 
 - [Math Structure](#math-structure)
   - [4.2.1 Superscript and Subscript](#421-superscript-and-subscript)
-  - [4.2.2 Line and Brace {#custom-id}](#422-line-and-brace-custom-id)
+  - [4.2.2 Line and Brace](#422-line-and-brace)
+  - [4.2.3 Fraction](#423-fraction)
+  - [4.2.4 Square Root](#424-square-root)
+  - [4.2.5 Matrix](#425-matrix)
 
 ## 4.2.1 Superscript and Subscript
 

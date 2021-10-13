@@ -4,12 +4,11 @@
 
 \documentclass{article}
 
-\usepackage{ntheorem}
+\usepackage{ntheorem}           % \ensuremath{}
 \usepackage{amsmath}
+\usepackage{amssymb}            % \Box
 
-%\renewcommand\qedsymbol{\ensuremath{\Box}}
-
-% FIXME: Command \Box not provided in base Latex2e
+\renewcommand\qedsymbol{\ensuremath{\Box}}
 
 \title{Math Environment Introduction}
 \author{Wenren Muyan}
@@ -25,7 +24,7 @@
         \(a+b=b+a\)\par
         \begin{math}a+b=b+a\end{math}
 
-        %\qedsymbol and $\qedsymbol$
+        \qedsymbol and $\qedsymbol$
 
         The Commutative law is
         $$

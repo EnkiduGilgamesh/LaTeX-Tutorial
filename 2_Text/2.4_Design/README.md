@@ -155,7 +155,7 @@ Package **multicol** provide more powerful functions of multiple columns, packag
 We can use `\newcommand` to define a new command. Its grammer is underneath:
 
 ```latex
-\newcommand\thecommand[number_of_parameters][default_parameter]{definition}
+\newcommand\thecommand[number_of_parameters][default_first_parameter]{definition}
 ```
 
 For example:

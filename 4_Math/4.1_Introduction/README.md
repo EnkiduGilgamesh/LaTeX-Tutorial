@@ -24,8 +24,6 @@ Command `\ensuremath` can get the defined command displayed like in math environ
 \qedsymbol and $\qedsymbol$
 ```
 
-FIXME: Command `\Box` not provided in base Latex2e
-
 The displayed formula:
 
 ```latex

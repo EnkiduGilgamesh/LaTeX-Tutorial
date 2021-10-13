@@ -160,7 +160,7 @@ NOTICE: Chinese character is only allowed in **xelatex** environment.
 
 In $\LaTeX$, A series of space is equal to a click of space. For example, `A   B` is equal to `A B`.
 
-The space after a macro command will be ignored. There are 4 ways to avoid the ignoring situation.
+The space after a macro command will be ignored. There are 3 ways to avoid the ignoring situation.
 
 ```latex
 \TeX ing            % 1
