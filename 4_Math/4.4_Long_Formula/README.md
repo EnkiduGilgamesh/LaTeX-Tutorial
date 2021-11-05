@@ -43,7 +43,7 @@ In every line of environment align, we can also put multiple formulas.
 \end{align*}
 ```
 
-Notice that the `&` is strongly recommended to closely use in front of binary operator, or it will make a wrong spacing. The two examples blow show how to solve special situation if needed.
+Notice that the `&` is strongly recommended to closely use in front of binary operator, or it will make a wrong spacing. The two examples below show how to solve special situation if needed.
 
 ```latex
 \begin{align}
@@ -73,6 +73,12 @@ In some situations, we want to insert some text in the formula. We can use `\int
 Package **mathtools** also provides command `\shortintertext{}` to insert text. Differently, the short-command will get a more compact line spacing between the text and the formula.
 
 Environment **subequations** is similar to equation environment, but it will treat all the formula in it as one formula when tagging.
+
+TODO: Page 265-266 example
+
+```latex
+
+```
 
 ## 4.4.2 Split Formula
 
