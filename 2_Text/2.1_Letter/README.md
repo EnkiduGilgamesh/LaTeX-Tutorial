@@ -4,7 +4,6 @@
   - [2.1.1 Letter](#211-letter)
     - [2.1.1.1 Accent](#2111-accent)
     - [2.1.1.2 Other Letter](#2112-other-letter)
-    - [2.1.1.3](#2113)
     - [2.1.1.3 Ligature](#2113-ligature)
   - [2.1.2 Punctuation](#212-punctuation)
     - [2.1.2.1 Common Punctuation](#2121-common-punctuation)
@@ -31,12 +30,12 @@
 
 Accent is a usual way to indicate the stress or special pronunciation in English.
 
-$\LaTeX$ provides many kinds of letters' accents. The table underneath shows some examples that are build-in command:
+$\LaTeX$ provides many kinds of letters' accents. The table underneath shows some examples that are build-in commands:
 
 |  |  |  |  |  
 | --- | --- | --- | --- |
-| \\&#95;o | \'o | \^o | \"o |
-| \~o | \=o | \aa | \SS |
+| \\&#95;o | \\'o | \\^o | \\"o |
+| \\~o | \\=o | \aa | \SS |
 | \t{oo} | H{o} | \i | \ae |
 
 See more details in the given code in "./Letter.tex".
@@ -51,11 +50,9 @@ TODO: how to input and output other letters
 {\fontencoding{OT2}\selectfont ABCDE}
 ```
 
-### 2.1.1.3
-
 ### 2.1.1.3 Ligature
 
-Some letters will have ligature between each other when output using a certain font. Also, there are two simple ways that we can use to avoid it manually.
+Some letters will have ligature between each other when output using a certain font. There are two simple ways that we can do to avoid it manually.
 
 ```latex
 differ find flight difficult ruffle\\
@@ -81,14 +78,14 @@ For common punctuation, we can input them directly. They are:
 
 NOTICE: The punctuations above are all DCB case. For SBC case, see "./zh/README.md".
 
-In LaTeX, we cannot input `"` directly, we input double `&#95;` for the former `"` and doule `'` for the latter `"` instead. And when `"` and `'` are close to each other, use `\,` to split them. For example:
+In LaTeX, we cannot input `"` directly, we input double `&#95;` for the former `"` and doule `'` for the latter `"` instead. And if `"` and `'` are too close to each other, use `\,` to split them. For example:
 
 ```latex
 `` ''\\
 ``\, ` '\, ''
 ```
 
-Different number or `-` will generate different puncatuation. For example:
+Different number of `-` will generate different puncatuation. For example:
 
 ```latex
 X-ray, 1--2, APP---Application
@@ -96,19 +93,19 @@ X-ray, 1--2, APP---Application
 
 TODO: English writing rule
 
-The Command `\dots` and `\ldots` will generate an ellipsis with wider distance between dots which has a better looking than directly using three dots punctuation.
+The Command `\dots` and `\ldots` will generate an ellipsis with wider distance between dots and dots which has a better looking than directly using three dots punctuation.
 
 ```latex
 Good: One, two, Three\dots\\
 Bad: One, two, Three...
 
 One, two, Three\dots.
-% Another dots that used to be full stop could follow \dots. 
+% Another dots that used to be the full stop could follow \dots. 
 ```
 
 ### 2.1.2.2 Special Punctuation
 
-Some symbol or punctuation are occupied by LaTeX command, so they cannot iniput directly. The `\` is called escape character. Symbols following it will not be treat as the build-in definition, but treat as themselves.
+Some symbols or punctuation are occupied by LaTeX commands, so they cannot input directly. The `\` is called escape character which Symbols following will not be treat as the build-in definition, but treat as themselves.
 
 ```latex
 \# \quad \$ \quad \% \quad \&\\
@@ -139,11 +136,11 @@ NOTICE: Use `\usepackage{textcomp}` firstly.
 
 Package **tipa** provides symbols of phonetic, while package **dingbat**, **bbding**, **pifont** provide symbols of instruction and decoration.
 
-The file "./rsc/symbols-letter.pdf" provide a relatively overall liist of symbols.
+The file "./rsc/symbols-letter.pdf" provide a relatively overall list of symbols.
 
-NOTE: Some package just provide symbol command, some package provide alternative font to their symbol, while some package change the holistic font set of the artical. So please read related documentation of your package before using.
+NOTE: Some package just provide symbol command, some package provide alternative font to their symbol, while some package change the holistic font set of the artical. Hence, please read related documentation of your package before using.
 
-We can also use encoding of a symbol to input it.
+We can also use the encoding of a symbol to input it.
 
 ```latex
 \symbol{90} \quad           % Decimalism
@@ -152,13 +149,13 @@ We can also use encoding of a symbol to input it.
 \symbol{`Z}                 % Symbol itself
 ```
 
-NOTE: If the symbol is special punctuation in 2.2, an escape character is also needed in front.
+NOTE: If the symbol is special punctuation in above, an escape character is also needed in front.
 
 NOTICE: Chinese character is only allowed in **xelatex** environment.
 
 ## 2.1.3 Blank
 
-In $\LaTeX$, A series of space is equal to a click of space. For example, `A   B` is equal to `A B`.
+In $\LaTeX$, series of space is equal to one click of space. For example, `A   B` is equal to `A B`.
 
 The space after a macro command will be ignored. There are 3 ways to avoid the ignoring situation.
 
@@ -191,7 +188,7 @@ function~$f(x)$\\
 
 It is also needed to be noticed that, in $\LaTeX$ writing, the space must be used after ", . ; :", or the line would not wrap around correctly.
 
-The book named *The Elements of Typographic Style by Robert Bringhurst* (I shared in "./rsc") discuss more details in English writing rules.
+The book named *The Elements of Typographic Style by Robert Bringhurst* (I shared in "./rsc") discusss more details in English writing rules.
 
 In $\LaTeX$, the width of the space at the end of a sentence following a dot is different from that in the sentence.
 
@@ -204,9 +201,9 @@ Roman number XII\@. Yes. \newline                  % 3
 Thinker et al.\ made the double play.              % 4
 ```
 
-While you compiling Chinese documentation, a space while automatially add between Chinese and English ignoring how many space you have typed in these space. See more ddetails in "./zh/Letter_zh.tex"
+While you compiling Chinese documentation, a space while automatially add between Chinese and English no matter how many space you have typed in these space. See more ddetails in "./zh/Letter_zh.tex"
 
-The command \phantom will generating a blank boxas wide as the paremeter.
+The command `\phantom` will generating a blank box as wide as the paremeter.
 
 ```latex
 There is a phantom in the box. \\
@@ -215,9 +212,9 @@ There is a \phantom{phantom} in the box.
 
 ## 2.1.4 Wrap Around
 
-In $\LaTeX$, just wrap around one time would be ignored, this peculiarity is set to help the code more legible. To begin a new paragraph, you need at least wrap around two times with a blank line in the middle.
+In $\LaTeX$, just wrapping around one time would be ignored, this peculiarity is set to help the code more legible. To begin a new paragraph, you need at least wrap around two times by clicking `Enter` in the middle.
 
-Another way to begin a new line is to use command `\\` or `\newline` at the end of a line. Command `\\` have a parameter which set the vertical distance between two lines. For example:
+Another way to begin a new line is to use command `\\` or `\newline` at the end of a line. Command `\\` has a parameter which set the vertical distance between two lines. For example:
 
 ```latex
 This is a line. 
@@ -228,7 +225,7 @@ This is another line. \\[5pt]{}
 [] are the beginning of this line. 
 ```
 
-Command `\linebreak` have an option which specify the urgency of the line break of linebreak and be defaultly set to 4, ranging from 0 the lowest to 4 the highest meaning that the line break must occur being contrary to the command `\nolinebreak`. So the `\linebreak` or `\linebreak[4]` look like distributing the line from the left to the right margins. For example:
+Command `\linebreak` has an option which specifies the urgency of the line break of linebreak, defaultly set to 4, ranging from 0 the lowest to 4 the highest meaning the degree that line break must occur. The command is contrary to the command `\nolinebreak`. So the `\linebreak` or `\linebreak[4]` look like distributing the line from the left to the right margins. For example:
 
 FIXME: How the `\linebreak[1~3]` works
 
@@ -263,11 +260,11 @@ There are two ways to change the font style which are font declaration and box c
 | {\mdseries} | \textmd{} | Medium series |
 | {\bfseries} | \textbf{} | Bold extended series |
 
-See their style in my given code.
+See their styles in my given code.
 
 NOTE: Since some fonts may not have all shape or series, these two command may have different effect.
 
-The command above can be mixed to use, for example:
+The commands above can be mixed to use, for example:
 
 ```latex
 {\rmfamily\slshape\mdseries Mixed font I}\\
@@ -276,7 +273,7 @@ The command above can be mixed to use, for example:
 
 Chinese fonts usaully have no other variant, so different type of fonts are used to replace the variant in a font family. See more details in "./zh/Letter_zh.tex".
 
-Command `{\normalfont }` and `\textnormal{}` are used to change the font back to normal which is `\rmfamily\mdseries\upshape` in general situation. For example:
+Command `{\normalfont }` and `\textnormal{}` are used to change the font back to normal which is equal to `\rmfamily\mdseries\upshape` in general situation. For example:
 
 ```latex
 {\sffamily \textbf{There is a \textit{complex example, but \textnormal{a normal one} is in} it}}
@@ -288,7 +285,7 @@ We can replace the rmfamily font:
 \renewcommand\rmdefault{cmfib}
 ```
 
-After this command, whenever we use `\rmfamily` or `\textrm{}`, we will choose font cmfib instead. The command is usually used in the preamble of a file.
+After this command, whenever we use `\rmfamily` or `\textrm{}`, we will choose font **cmfib** instead. The command is usually used in the preamble of a file.
 
 Also we can change the artical's using default font family from rm into sf:
 
@@ -300,7 +297,7 @@ More details about English font can be found in "./rsc/hartke.pdf" and [The LaTe
 
 ### 2.1.5.2 NFSS System
 
-Like dividing font into three dimensions, $\LaTeX$ publish its own method to locate a font, NFSS(New Font Selection Scheme) which also dividing font into many orthometric properties, such as encoding, family, series, shape, size and so on.
+Like dividing font into three dimensions, $\LaTeX$ has published its own method to locate a font, NFSS(New Font Selection Scheme) which also dividing font into many orthometric properties, such as encoding, family, series, shape, size and so on.
 
 The whole command to choose a font in NFSS is:
 
@@ -317,7 +314,7 @@ NOTE: The first parameter in fontsize is letter's size, and the second one is li
 
 To use other fonts, the simpleest way is to use font package, such as **times**, **mathptms**, **txfonts** and so on.
 
-The package **fontspec** contains commands that can use other font to replace the default font in latex.
+The package **fontspec** contains commands that can use other font to replace the default font in $\LaTeX$.
 
 ```latex
 \usepackage{fontspec}
@@ -337,7 +334,7 @@ Package **fontspec** can also define new font famlily if needed.
 
 NOTE: Different font may need different encoding.
 
-For example, if you want to use font package ccfonts and euler for better harmony of text and math part, you need to use T1 encoding.
+For example, if you want to use font package **ccfonts** and **euler** for better harmony of text and math part, you need to use T1 encoding.
 
 ```latex
 \usepackage[OT1,T1]{fontenc}
@@ -347,7 +344,7 @@ The multiple parameters are the encoding ways of the article, with the final one
 
 ### 2.1.5.4 Math Font
 
-Generally LaTeX using italic font in math parts of the article. And commands `\mathrm{}`, `/mathsf{}`, `/mathtt{}`, and so on can change the math parts font, which is configured defualtly as the same with `\text**{}`.
+Generally, $\LaTeX$ using italic font in math parts of the article. And commands `\mathrm{}`, `\mathsf{}`, `\mathtt{}`, and so on can change the math parts font, which is configured defualtly the same with `\text**{}`.
 
 ```latex
 \begin{equation}
@@ -360,9 +357,9 @@ Generally LaTeX using italic font in math parts of the article. And commands `\m
 
 Some math font packages can change the math parts font, but whether it is useful to above commands depanding the package whether loads "no-math" module in fontspec.
 
-If it doesn't, like package ccfonts, and you want to change the configuration of these command like \mathrm{}, just manually load the module by command `\usepackage[no-math]{fontspec}`
+If it doesn't, like package **ccfonts**, and you want to change the configuration of these command like `\mathrm{}`, just manually load the module by command `\usepackage[no-math]{fontspec}`
 
-TODO: Situation may go complex when we use both English which not support Unicode and Chinese in one article, See the book in Page 74 for some help.
+TODO: Situation may go complex when we use both English which not support Unicode and Chinese in one article, see the book in Page 74 for some help.
 
 ### 2.1.5.5 Flaw in Font
 
@@ -379,24 +376,24 @@ Bold letters may be also too close to the puntuation following it.
 `{\bfseries leaf}' \quad `{\bfseries leaf\/}' \quad `\textbf{leaf}'
 ```
 
-Command `\nocorrlist{}` can set a punctuation that are forbiden the revise. `\nocorrlist{}` is defualt set with "," and "." in it which is the same as `\newcommand\nocorrlist{,.}`.
+Command `\nocorrlist{}` can set a punctuation that are forbiden the revise. `\nocorrlist{}` is defualtly set with "," and "." in it which is the same as `\newcommand\nocorrlist{,.}`.
 
 ### 2.1.5.6 Important to Know
 
-NOTE: $\LaTeX$ only use one encoding in one time. That may make mistakes when you use fonts in different encoding.
+NOTE: $\LaTeX$ only use one encoding at a time. That may make mistakes when you use fonts in different encoding.
 
 If you need different encodings, you need change it manually.
 
-There is an example: in Greek and fontspec package. $XeLaTeX$ uses Unicode encoding, while the command `\textipa` in **tipa** package which outputs IPA works in ASCII.
+There is an example: in Greek and fontspec package. $XeLaTeX$ uses Unicode encoding, while the command `\textipa` in **tipa** package outputs IPA works in ASCII.
 So when you compile command `\textipa{}`, the compiler will change the IPA's encoding from ASCII into Unicode, which can not output by default font Latin Modern because it lack these endoing.
 
-To solve this problem, you just need use font containing IPA in Unicode, such as Linux Libertine O, Times New Roman and so on. for example,
+To solve this problem, you just need use font containing IPA in Unicode, such as Linux Libertine O, Times New Roman and so on. For example,
 
 ```latex
 \setmainfont{CMU Serif}
 ```
 
-There is another way is use `\newcommand` to define a new command, please see more details in book Page 75.
+There is another way to use `\newcommand` to define a new command, please see more details in book Page 75.
 
 There is a useful package named **fonttable** which can output the symbol table in specific font with its NFSS.
 
@@ -464,7 +461,7 @@ In $\LaTeX$, there are 11 kinds of units to represent the length. They are:
 | mm | millimeter | |
 | dd | didot point | 1157dd=1238pt |
 | cc | cicero | 12dd |
-| sp | scaled point | 65536pt=1pt |
+| sp | scaled point | 65536pt=1sp |
 | em | whole body | Width of M (chaging with the font size and font) |
 | ex | x-height | Height of x(chaging with the font size and font) |
 
@@ -482,7 +479,7 @@ Font size is described by length units in $\LaTeX$.
 
 The first parameter defines the font size and the second parameter defines the line space which will be explained in *2.1.8 Line Space*.
 
-There are some simple declaration command provided to change the font size.
+There are some simple declaration commands provided to change the font size.
 
 | | | | |
 | --- | --- | --- | --- |
@@ -490,7 +487,7 @@ There are some simple declaration command provided to change the font size.
 | \normalsize | \large | \Large | \LARGE |
 | \huge | \Huge | | |
 
-In different document class options, the \normalsize could be configured differently. Standard class have 10pt, 11pt, 12pt normalsize to option with command above defineing different size of font.
+In different document class options, the `\normalsize` could be configured differently. Standard class have 10pt, 11pt, 12pt normalsize to option with command above defineing different size of font.
 
 And command above will change the line space, too, in order to make the composing more beautiful.
 
@@ -518,7 +515,7 @@ To change the line space, the basical command can be used like underneath, the p
 
 NOTE: In Chinese environment, the default line space is 1.3 times as long as the **font size**.
 
-Package **setspace** provides some command to define space line easily.
+Package **setspace** provides some commands to define space line easily.
 
 Among them, the command `\setstretch{}` used frequently is equal to `\linespread{}\selectfont`.
 
@@ -531,9 +528,9 @@ A normal\\
 line space. 
 ```
 
-NOTE: It should be noticed that other command like \singlespacing, \onehalfspacing reprensent the line space times to font size, instead of the default space line.
+NOTE: It should be noticed that other command like `\singlespacing`, `\onehalfspacing` reprensent the line space times to font size, instead of the default space line.
 
-These commands can also used as environment, for example:
+These commands can be also used as environment, for example:
 
 ```latex
 \begin{spacing}{1.5}
@@ -621,7 +618,7 @@ Commands `\dotfill` and `\hrulefill` are similar to `\hfill` in function, and th
 left\dotfill middle\hrulefill right
 ```
 
-Command `\parindent` can control the indent at the far left of one line. It usually used in environment and need to coordinate with `\setlength`. For example:
+Command `\parindent` can control the indent at the far left of one line. It is usually used in environment and need to coordinate with `\setlength`. For example:
 
 ```latex
 {
@@ -635,7 +632,7 @@ Command `\parindent` can control the indent at the far left of one line. It usua
 
 FIXME: Why this command above did not work?
 
-There is a useful technique that is to set a definition of a designated length, so that you can just change your definition to change the global length. The mylen is defined in Introduction.
+There is a useful technique that is to set a definition of a designated length, so that you can just change your definition to change the global length. The **mylen** is defined in Introduction.
 
 ```latex
 \setlength\mylen{2em}
@@ -649,7 +646,7 @@ There is a useful technique that is to set a definition of a designated length, 
 
 ## 2.1.10 Box
 
-Box is the fundamental unit $\LaTeX$ deal with. Everything, containing a letter, a line, a paragraph, a graph, a table, a page and so on, can be regarded as a box.
+Box is the fundamental unit $\LaTeX$ dealing with. Everything, containing a letter, a line, a paragraph, a graph, a table, a page and so on, can be regarded as a box.
 
 On horizon, the letter boxes constitude a line box, and on vertical, the line boxes contitude a page box.
 
@@ -670,7 +667,7 @@ This is a\,\makebox[1em]{text}\,in box. \par
 \makebox[5cm][s]{Some stretched text}
 ```
 
-The \makebox can even generate a 0-width box to make overlap effect. The command `\llap` and `\rlap` are professionally used to do the same. the former one left alignment and the latter one right alignment.
+The `\makebox` can even generate a 0-width box to make overlap effect. The command `\llap` and `\rlap` are professionally used to do the same. the former one left alignment and the latter one right alignment.
 
 ```latex
 \makebox[0pt][l]{word}text\par
@@ -709,7 +706,7 @@ We can define a box environment, so that we can use it repeatedly. So saving box
 \usebox\mybox \fbox{\usebox\mybox}
 ```
 
-TODO: Command `\settowidth<length_variable>{text}`, `\settoheight<length>{text}`, `\settodepth<length>{text}` can respectively get the text parameter's width, height, and depth.
+TODO: Command `\settowidth<length_variable>{text}`, `\settoheight<length>{text}`, `\settodepth<length>{text}` can respectively set the variable to the text parameter's width, height, and depth.
 
 And command `\wd<box_variable>`, `\ht<box>`, `\dp<box>` can respectively get the box parameter's width, height, and depth.
 
