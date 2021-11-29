@@ -2,7 +2,7 @@
 
 The original purpose to design the $\TeX$ system is to help compose complex math formula.
 
-Boxes will arrange by a special way in math environment, even the most simple formula looks different from the normal text. It's not a good habit that we don't use math environment when we meet math formula for convenience.
+Boxes will arrange by a special way in math environment, even the most simple formula looks different from the normal text. It's not a good habit that we don't use math environment for convenience when we meet math formula.
 
 There are two main ways to go into math environment, the inline formula and the displayed formula.
 

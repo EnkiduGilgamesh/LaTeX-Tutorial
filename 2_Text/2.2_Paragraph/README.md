@@ -22,9 +22,9 @@
     - [2.2.12.1 Vspace](#22121-vspace)
     - [2.2.12.2 Minipage](#22122-minipage)
     - [2.2.12.3 Parbox](#22123-parbox)
-  - [2.2.12.4 Rule Box](#22124-rule-box)
-  - [2.2.12.5 Strut](#22125-strut)
-  - [2.2.12.6 Raise Box](#22126-raise-box)
+    - [2.2.12.4 Rule Box](#22124-rule-box)
+    - [2.2.12.5 Strut](#22125-strut)
+    - [2.2.12.6 Raise Box](#22126-raise-box)
   - [2.2.13 Page Turning](#2213-page-turning)
   - [2.2.14 Footnote](#2214-footnote)
   - [2.2.15 Margin Paragraph](#2215-margin-paragraph)
@@ -504,13 +504,13 @@ Package **fancyvrb** provides some special commands help us do the above like un
 \fbox{\UseVerb{myverb}}\par
 ```
 
-The package **cprotect** do the similar things to the fancyvrb.
+The package **cprotect** does the similar things to the fancyvrb.
 
 ```latex
 \cprotect\fbox{\verb|#$@$\%^&|}\par
 ```
 
-Package **verbatim** extends the verbatim environment, which also provide a command `\verbatiminput` to copy the text in a file you give to. See more details in "./rsc/verbatim.pdf"
+Package **verbatim** extends the verbatim environment, which also provides a command `\verbatiminput` to copy the text in the file you give to it. See more details in "./rsc/verbatim.pdf"
 
 The package can also define a very short name to `\verb`. It should be noticed that the symbol you define may conflict with some commands you use behind.
 
@@ -523,7 +523,7 @@ The package can also define a very short name to `\verb`. It should be noticed t
 
 ## 2.2.10 Code Environment
 
-Package **listings** provides various languages environment with code highlight. The basic use:
+Package **listings** provides various languages' environment with code highlighting:
 
 ```latex
 \usepackage{listings}
@@ -539,7 +539,7 @@ Package **listings** provides various languages environment with code highlight.
 \end{document}
 ```
 
-We also can define the style of the highlight.
+We can also custom the style of the highlighting:
 
 ```latex
 \lstset{
@@ -552,13 +552,13 @@ We also can define the style of the highlight.
 }
 ```
 
-TODO: The package also can insert an inline code.
+TODO: The package can also insert an inline code.
 
 ```latex
 
 ```
 
-The package can also set the color, the background and so on. See more details in "./rsc/listings.pdf"
+The package can also set the color, the background, etc. for the code or the code block. See more details in "./rsc/listings.pdf"
 
 ## 2.2.11 Tabbing Environment
 
@@ -578,17 +578,17 @@ The tabbing environment is defined to help to use TAB for composing. It is used 
 \end{tabbing}
 ```
 
-The `\kill` controls if the first row displays. Other commands used in tabbing environment show in the table blow:
+The `\kill` controls if the first row displays. Other commands used in tabbing environment show in the table below:
 
 | | |
 | --- | --- |
-| \= | set a TAB |
-| \' | the text front and latter will be centered around the current TAB |
+| \\= | set a TAB |
+| \\' | the text front and latter will be centered around the current TAB |
 | \\` | align right for the latter text |
 | \\< | skip to the former TAB |
 | \\> | skip to the latter TAB |
-| \+ | every line behind current line skips to the right one time |
-| \- | every line behind current line skips to the left one time |
+| \\+ | every line behind current line skips to the right one time |
+| \\- | every line behind current line skips to the left one time |
 | \pushtabs | save the current TAB |
 | \poptabs | recover the TAB saved by \pushtabs |
 
@@ -630,7 +630,7 @@ There is a complex example.
 
 The commands about vertical box, like `\vspace{length}`, `\vfill`, `\vspace{\fill}` are just like the horizontal box command. See more details in "~/LaTeX/2_Text/2.1_Letter/Letter.tex".
 
-These commands are used in the beginning of the latter line.
+TODO: These commands are used in the beginning of the latter line.
 
 ```latex
 
@@ -647,7 +647,7 @@ There is another
 \end{minipage}. 
 ```
 
-The paragraph configured like \parindent, \parskip and so on can be used in minipage environment.
+The paragraph configured like `\parindent`, `\parskip` and so on can be used in minipage environment.
 
 The minipage is similar to parbox.
 
@@ -694,7 +694,7 @@ In *2.2.9 Verbatim*, the `\verb` can save in the lrbox, while the verbatim envir
 \fbox{\usebox\verbatimbox}\quad\fbox{\usebox\verbatimbox}
 ```
 
-Package **fancyvrb** also provides \SaveVerbatim and \UseVerbatim to do the above job.
+Package **fancyvrb** also provides `\SaveVerbatim` and `\UseVerbatim` to do the above job.
 
 Package **varwidth** provides varwidth to generate environment with settled max width, so the width can be changed with your text input.
 
@@ -709,7 +709,7 @@ Package **varwidth** provides varwidth to generate environment with settled max 
 }
 ```
 
-## 2.2.12.4 Rule Box
+### 2.2.12.4 Rule Box
 
 Rule box is a solid box fill with ink. Its whole command is `\rule[lift_distance]{width}{height}`.
 
@@ -719,7 +719,7 @@ Left\rule[0.5ex]{2cm}{0.6pt}Right\par
 \rule[-0.1em]{1em}{1em}Prove comlete. 
 ```
 
-## 2.2.12.5 Strut
+### 2.2.12.5 Strut
 
 Strut means a placeholder, whose width or height is 0. It is similar to the `\phantom`. $\LaTeX$ has predefined `\strut` whose height is as high as current font size.
 
@@ -729,7 +729,7 @@ Strut means a placeholder, whose width or height is 0. It is similar to the `\ph
 \fbox{\rule{0pt}{2em}---}
 ```
 
-## 2.2.12.6 Raise Box
+### 2.2.12.6 Raise Box
 
 Raise box is used to generate a box with lift distance, and we can put our text in it. That is how the `\TeX` symbol appears.
 
@@ -748,7 +748,7 @@ There are several commands to do with page turning.
 
 * `\raggedbottom` means that every page will keep their natural height.
 * `\flushbottom` means that all the page will align at the buttom of the paper.
-* `\pagebreak[rank]` can skip to the next page with four ranks, 0, 1, 2 and 4, with 4 in force, \nopagebreak is on the contrary.
+* `\pagebreak[rank]` can skip to the next page with four ranks, 0, 1, 2 and 4, with 4 in force, `\nopagebreak` on the contrary.
 
 ```latex
 \pagebreak[4]
@@ -776,7 +776,7 @@ Footnote explains details about some message you have referenced in paragraphs.
 
 The `\footnote` uses the counter footnote, and in minipage it uses mpfootnote. But the `\footnote` has a optional parameters can replace the number.
 
-% TODO: use footnote in minipage
+TODO: use footnote in minipage
 
 ```latex
 This is a footnote\footnote{\textbackslash footnote\{text\}}. \par

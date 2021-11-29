@@ -65,9 +65,9 @@ For example
 
 ![Page Design](https://github.com/EnkiduGilgamesh/PicBed/blob/main/Image_LaTeX/20210927-Page_Design.jpg?raw=true)
 
-The graphic is drawed by package layout.
+The graphic is drawed by package **layout**.
 
-These parameters can affect each other, so that we need to set them very carefully. For example, if we need to set the distance of right margin, we need to calcule it through the equation underneath:
+These parameters can affect each other, so that we need to set them very carefully. For example, if we need to set the distance of right margin, we need to calculate it through the equation underneath:
 
 $$
 1 in+hoffset+oddsidemargin+textwidth+right\_margin=paperwidth
