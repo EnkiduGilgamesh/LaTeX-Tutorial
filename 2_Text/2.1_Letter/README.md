@@ -501,9 +501,9 @@ Every line has its own base line, and the distance between two adjacent base lin
 
 ![2021-10-05-Line_Space](https://raw.githubusercontent.com/EnkiduGilgamesh/PicBed/main/Image_LaTeX/2021-10-05-Line_Space.jpg)
 
-Defaultly, line space in paragraph is 1.2 times as long as the **font size**.
+Defaultly, base line space in paragraph is 1.2 times as long as the **font size**.
 
-To change the line space, the basical command can be used like underneath, the parameters defines the times to **default line space**.
+Another parameter is space factor. The final line space will be "baselineSpace * factor". To change the line space, the basical command can be used like underneath, the parameters is the factor we want.
 
 ```latex
 {
@@ -513,7 +513,7 @@ To change the line space, the basical command can be used like underneath, the p
 }
 ```
 
-NOTE: In Chinese environment, the default line space is 1.3 times as long as the **font size**.
+In article class, the default factor is 1; whereas in **ctex** package, the default factor is 1.3.
 
 Package **setspace** provides some commands to define space line easily.
 
@@ -543,16 +543,16 @@ These commands can be also used as environment, for example:
 \end{doublespace}
 ```
 
-The default line space is controlled by the value of `\baselineskip`. Actually, `\fontsize` and `\linespread` indirectly controlled the `\baselineskip`.
+The default line space is controlled by the value of `\baselineskip`.
 
-`\lineskiplimit` is a limit value set by users whose function is that when two adjancent lines' line space smaller than it, the line space will use the value `\lineskip`, which is also set by us, instead.
+`\lineskiplimit` is a limit value set by users whose function is that when the distance between **upper box's buttom margin** and **the lower box's top margin** is smaller than the value, the distance will be adjusted to the value `\lineskip`, which is also set by us.
 
 ```latex
 \setlength\lineskiplimit{2.5bp}
 \setlength\lineskip{2.5bp}
 ```
 
-This function can be very useful when math fraction appears in your article.
+This function can be very useful when math fraction appears in article.
 
 ## 2.1.9 Horizontal Space
 
