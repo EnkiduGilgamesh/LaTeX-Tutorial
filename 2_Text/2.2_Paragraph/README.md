@@ -828,14 +828,14 @@ The marginpar will display in the margins.
 The marginpar will display in the margins\marginpar{Marginpar}. \par
 ```
 
-The text will display in the left side margin in even number page.
+The text will display in the left side margin in even number page whereas in the right side margin in odd number
 
-TODO: Know more about margin paragraph.
-
-```latex
-
-```
+The marginpar have an option meaning that the text in option will display if the marginpar is in even page.
 
 ```latex
-
+\marginpar[\hfill 左 $\rightarrow$]{$\leftarrow$ 右}
 ```
+
+Command `\reversemarginpar` will exchange the position of marginpar in even and odd page, and `\normalmarginpar` will reset to the defualt position.
+
+For further configuration about marginpar, see package **marginnote** in "./rsc/marginnote.pdf"
