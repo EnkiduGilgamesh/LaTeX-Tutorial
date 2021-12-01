@@ -744,7 +744,7 @@ Its whole command is `\raisebox{lift_distance}{height}[depth]{text}`.
 
 ## 2.2.13 Page Turning
 
-There are several commands to do with page turning.
+There are several commands to do with page turning:
 
 * `\raggedbottom` means that every page will keep their natural height.
 * `\flushbottom` means that all the page will align at the buttom of the paper.
@@ -833,7 +833,7 @@ The text will display in the left side margin in even number page whereas in the
 The marginpar have an option meaning that the text in option will display if the marginpar is in even page.
 
 ```latex
-\marginpar[\hfill 左 $\rightarrow$]{$\leftarrow$ 右}
+\marginpar[\hfill Left $\rightarrow$]{$\leftarrow$ Right}
 ```
 
 Command `\reversemarginpar` will exchange the position of marginpar in even and odd page, and `\normalmarginpar` will reset to the defualt position.
