@@ -795,8 +795,16 @@ A circled number footnote\footnote{}.
 The circled number is ugly, we can use package **pifont** instead. `\ding` outputs the character whose encoding is the number we put. See more details in "./rsc/psnfss2e.pdf"
 
 ```latex
+\usepackage{pifont}
 \renewcommand\thefootnote{\ding{\numexpr171+\value{footnote}}}
 A more beautiful circled number foootnote\footnote{}. 
+```
+
+More generally, we can redefine the circle number
+
+```latex
+\usepackage{pifont}
+\renewcommand\textcircled[1]{\ding{\numexpr171+#1\relax}}
 ```
 
 The footnote can not used in box or table. But we could use `\footnotemark` and `\footnotetext` instead. For example:
