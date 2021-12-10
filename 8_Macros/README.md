@@ -48,4 +48,3 @@ After using command above, we will inherit all the property of **article** class
 
 We have discussed command `\newcommand`, `\renewcommand` and `\providecommand` in 2.4 which are all avalible in macros file. But it must to be mentioned that they are all base on command `\def`, a primitive command used in $\TeX$.
 
-
